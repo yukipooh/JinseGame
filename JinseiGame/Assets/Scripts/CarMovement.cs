@@ -1,33 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class CarMovement : MonoBehaviour
 {
     [SerializeField] GameObject[] tilePoints;    //マス
+    NavMeshAgent navMeshAgent;
     Tween tween;
     Vector3 latestPosition;
     int currentNum = 0;
+    Rigidbody rigidbody;
+    const float INTERVAL = 0.5f;    //次のマスに進むまでに待つ時間
+    
 
     const float ROTATE_FORWARD_ADJUST_ANGLE = 90;
 
     void Start() {
         latestPosition = transform.position;    
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     public void MoveForward(int tileNum){
         if(tileNum < tilePoints.Length){
-            this.tween = transform.DOMove(tilePoints[tileNum].transform.position,3);
+            //this.tween = transform.DOMove(tilePoints[tileNum].transform.position,1);
+            navMeshAgent.SetDestination(tilePoints[tileNum].transform.position);
             this.currentNum++;
         }
     }
 
+    
+    IEnumerator Dice(){
+        int dice = Random.Range(1,10);   //ルーレット回すよ
+        Debug.Log(dice);
+        for(int i = 0; i < dice; i++){
+            MoveForward(currentNum + 1);
+            yield return new WaitForSeconds(INTERVAL);
+        }   
+    }
+
+    void AdjustAngle(){
+        RaycastHit hit;
+        if(Physics.Raycast(
+            transform.position,
+            -transform.up,
+            out hit,
+            float.PositiveInfinity
+            )){
+                // 傾きの差を求める
+                Quaternion q = Quaternion.FromToRotation(
+                    transform.up,
+                    hit.normal);
+
+                // 自分を回転させる
+                transform.rotation *= q;
+            }
+    }
+
     void Update() {
         if(Input.GetKeyDown(KeyCode.W)){
-            MoveForward(currentNum + 1);
+            StartCoroutine("Dice");
         }    
-        LookForward();
+        
     }
 
     void LookForward(){
