@@ -30,7 +30,18 @@ public class EnumDefinitions : MonoBehaviour
         GAMBLER,
         YASUO_MAIN,
         POKEMON_MASTER,
-        
-        
+    }
+
+    public enum Treasure{
+        TELESCOPE,
+        ROBOT,
+        KUWAGATA,
+        FOSSIL,
+    }
+
+    public enum Insurance{
+        KASAI,
+        SEIMEI,
+        JIDOSHA,
     }
 }
