@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New TileInfo", menuName = "TileInfo")]
 public class TileInfo : ScriptableObject
 {
-    public EnumDefinitions.TileType tileType;
-    [Multiline(4)] public string description;
+    public EnumDefinitions.TileType tileType;   //タイルタイプ
+    [Multiline(4)] public string description;   //文章
     public int money_delta;
     public EnumDefinitions.Job job;
     public EnumDefinitions.Treasure treasure;
