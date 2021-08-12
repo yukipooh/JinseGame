@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnumDefinitions : MonoBehaviour
+public class EnumDefinitions
 {
     public enum TileType {
         START,  //スタート
@@ -20,6 +20,7 @@ public class EnumDefinitions : MonoBehaviour
     }
 
     public enum Job {
+        FREETER,    //フリーター
         CHEF,
         DESIGNER,
         ATHLETE,
@@ -43,5 +44,15 @@ public class EnumDefinitions : MonoBehaviour
         KASAI,
         SEIMEI,
         JIDOSHA,
+    }
+
+    public enum House{
+        NONE,
+        MANSION,    //マンション
+        APART,  //アパート
+        NORMAL, //一軒家
+        CASTLE, //お城
+        GOUTEI, //豪邸
+        
     }
 }

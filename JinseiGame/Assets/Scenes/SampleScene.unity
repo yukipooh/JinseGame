@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -846,6 +846,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &746663251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5869271205409435708, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+  m_PrefabInstance: {fileID: 919496164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &818331655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1059,6 +1064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roulette_prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5869271205409435708, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5869271205409435709, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1102,6 +1111,34 @@ PrefabInstance:
     - target: {fileID: 5869271205409435709, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271205660520840, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: carMovement
+      value: 
+      objectReference: {fileID: 993914865}
+    - target: {fileID: 5869271207076110837, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: rouletteColors.Array.data[8].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271207076110837, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: rouletteColors.Array.data[8].g
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271207076110837, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: rouletteColors.Array.data[8].r
+      value: 0.35790148
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271207076110837, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: rouletteColors.Array.data[9].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271207076110837, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: rouletteColors.Array.data[9].g
+      value: 0.8504852
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271207076110837, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: rouletteColors.Array.data[9].r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
@@ -1162,6 +1199,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f7dd15d3b7f5749b8b5a6feeb238b1, type: 3}
+--- !u!1 &993914862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3028220372991082737, guid: 575c03d6d17fa3c46a6e27d11c3c6ba5, type: 3}
+  m_PrefabInstance: {fileID: 3028220373768316258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &993914865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3028220372991082742, guid: 575c03d6d17fa3c46a6e27d11c3c6ba5, type: 3}
+  m_PrefabInstance: {fileID: 3028220373768316258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993914862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb89b7f9f5173214badd75c75c1c4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &993914867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993914862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5dd871181871d14f8935e202db2d958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMoney: 0
+  debt: 0
+  job: 0
+  house: 0
+  familyNum: 1
+  treasures: 
+  insurances: 
 --- !u!1001 &1056776250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1277,7 +1349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: eecb1cc290092774aa81233aa21e4f92, type: 2}
 --- !u!4 &1252964858 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7995511568018390243, guid: a7f7dd15d3b7f5749b8b5a6feeb238b1, type: 3}
@@ -1526,7 +1598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: d7a5c941b16ff8045aaca520be2a7cf5, type: 2}
 --- !u!4 &2040136713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7995511568018390243, guid: a7f7dd15d3b7f5749b8b5a6feeb238b1, type: 3}
@@ -1654,6 +1726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: 3028220372991082742, guid: 575c03d6d17fa3c46a6e27d11c3c6ba5, type: 3}
+      propertyPath: roulette
+      value: 
+      objectReference: {fileID: 746663251}
     - target: {fileID: 3028220372991082742, guid: 575c03d6d17fa3c46a6e27d11c3c6ba5, type: 3}
       propertyPath: tilePoints.Array.data[0]
       value: 

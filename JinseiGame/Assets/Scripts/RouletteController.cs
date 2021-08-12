@@ -9,6 +9,8 @@ public class RouletteController : MonoBehaviour {
     [HideInInspector] public GameObject roulette;
     [HideInInspector] public float rotatePerRoulette;
     [HideInInspector] public RouletteMaker rMaker;
+
+    [SerializeField] CarMovement carMovement;
     public static string result;
     private float rouletteSpeed;
     private float slowDownSpeed;
@@ -49,8 +51,9 @@ public class RouletteController : MonoBehaviour {
 
     private void StartOnClick () {
         rouletteSpeed = 14f;
+        this.transform.Rotate(0,0,Random.Range(0,359));
         startButton.gameObject.SetActive (false);
-        Invoke ("ShowStopButton", 0.5f);
+        Invoke ("ShowStopButton", 0.1f);
         isPlaying = true;
     }
 
@@ -77,5 +80,16 @@ public class RouletteController : MonoBehaviour {
         }
         resultText.text = result;
         // retryButton.gameObject.SetActive(true);
+        Invoke ("Move", 0.75f);
+        
+        
+    }
+
+    void Move(){
+        isStop = false; //ルーレットを再利用できるように
+        startButton.gameObject.SetActive(true); //ルーレットを再利用できるように
+        this.transform.parent.gameObject.SetActive(false);  //ルーレットを非表示
+
+        carMovement.StartCoroutine("Dice"); //resultに応じて移動
     }
 }

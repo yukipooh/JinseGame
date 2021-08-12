@@ -7,6 +7,8 @@ using UnityEngine;
 public class CarMovement : MonoBehaviour
 {
     [SerializeField] GameObject[] tilePoints;    //マス
+    [SerializeField] GameObject roulette;   //RoulettePrefab
+    PlayerData playerData;
     NavMeshAgent navMeshAgent;
     Tween tween;
     Vector3 latestPosition;
@@ -21,7 +23,7 @@ public class CarMovement : MonoBehaviour
         latestPosition = transform.position;    
         navMeshAgent = GetComponent<NavMeshAgent>();
         rigidbody = GetComponent<Rigidbody>();
-        
+        playerData = GetComponent<PlayerData>();
     }
 
     public void MoveForward(int tileNum){
@@ -31,51 +33,24 @@ public class CarMovement : MonoBehaviour
             this.currentNum++;
         }
     }
-
     
-    IEnumerator Dice(){
+    public IEnumerator Dice(){
         int dice = int.Parse(RouletteController.result);   //ルーレット回すよ
         Debug.Log(dice);
         for(int i = 0; i < dice; i++){
             MoveForward(currentNum + 1);
             yield return new WaitForSeconds(INTERVAL);
         }
+        OnTileStopped();    //移動し終わった
+        roulette.SetActive(true);
+    }
+
+    void OnTileStopped(){
         //移動し終わった
-        tilePoints[currentNum].GetComponent<Tile>().Stopped();
-    }
-
-    void AdjustAngle(){
-        RaycastHit hit;
-        if(Physics.Raycast(
-            transform.position,
-            -transform.up,
-            out hit,
-            float.PositiveInfinity
-            )){
-                // 傾きの差を求める
-                Quaternion q = Quaternion.FromToRotation(
-                    transform.up,
-                    hit.normal);
-
-                // 自分を回転させる
-                transform.rotation *= q;
-            }
-    }
-
-    void Update() {
-        if(Input.GetKeyDown(KeyCode.W)){
-            StartCoroutine("Dice");
-        }    
+        tilePoints[currentNum].GetComponent<Tile>().Stopped(ref playerData);
         
     }
-
-    void LookForward(){
-        Vector3 diff = transform.position - latestPosition;
-        latestPosition = transform.position;
-
-        if(diff.magnitude > 0.1f){
-            transform.rotation = Quaternion.LookRotation(diff);
-            transform.Rotate(new Vector3(0,ROTATE_FORWARD_ADJUST_ANGLE,0));
-        }
+    void Update() {
+        
     }
 }

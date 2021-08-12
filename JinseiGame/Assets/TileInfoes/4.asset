@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 134def2eba15ce2479e7e825efc273f5, type: 3}
-  m_Name: 2
+  m_Name: 4
   m_EditorClassIdentifier: 
-  tileType: 2
-  description: "\u96FB\u8ECA\u306B\u4E57\u3063\u3066\u3044\u305F\u3089\u8CA1\u5E03\u3092\u76D7\u307E\u308C\u305F\uFF01\n5000\u5186\u5931\u3046"
-  money_delta: -5000
+  tileType: 7
+  description: "\u304A\u5B9D\u300C\u671B\u9060\u93E1\u300D\u3092\u767A\u898B\uFF01"
+  money_delta: 0
   job: 0
   treasure: 0
   insurance: 0
