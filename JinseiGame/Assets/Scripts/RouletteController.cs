@@ -9,7 +9,7 @@ public class RouletteController : MonoBehaviour {
     [HideInInspector] public GameObject roulette;
     [HideInInspector] public float rotatePerRoulette;
     [HideInInspector] public RouletteMaker rMaker;
-    private string result;
+    public static string result;
     private float rouletteSpeed;
     private float slowDownSpeed;
     private int frameCount;
@@ -18,17 +18,18 @@ public class RouletteController : MonoBehaviour {
     [SerializeField] private Text resultText;
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
-    [SerializeField] private Button retryButton;
+    
+    // [SerializeField] private Button retryButton;
 
     public void SetRoulette () {
         isPlaying = false;
         isStop = false;
         startButton.gameObject.SetActive (true);
         stopButton.gameObject.SetActive (false);
-        retryButton.gameObject.SetActive(false);
+        // retryButton.gameObject.SetActive(false);
         startButton.onClick.AddListener (StartOnClick);
         stopButton.onClick.AddListener (StopOnClick);
-        retryButton.onClick.AddListener (RetryOnClick);
+        // retryButton.onClick.AddListener (RetryOnClick);
     }
 
     private void Update () {
@@ -49,7 +50,7 @@ public class RouletteController : MonoBehaviour {
     private void StartOnClick () {
         rouletteSpeed = 14f;
         startButton.gameObject.SetActive (false);
-        Invoke ("ShowStopButton", 1.5f);
+        Invoke ("ShowStopButton", 0.5f);
         isPlaying = true;
     }
 
@@ -74,7 +75,7 @@ public class RouletteController : MonoBehaviour {
                 result = rMaker.choices[i - 1];
             }
         }
-        resultText.text = result + "\nが当たったよ！";
-        retryButton.gameObject.SetActive(true);
+        resultText.text = result;
+        // retryButton.gameObject.SetActive(true);
     }
 }
