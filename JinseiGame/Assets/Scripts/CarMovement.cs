@@ -10,7 +10,7 @@ public class CarMovement : MonoBehaviour
     NavMeshAgent navMeshAgent;
     Tween tween;
     Vector3 latestPosition;
-    int currentNum = 0;
+    int currentNum = 0; //現在いるタイル
     Rigidbody rigidbody;
     const float INTERVAL = 0.5f;    //次のマスに進むまでに待つ時間
     
@@ -21,6 +21,7 @@ public class CarMovement : MonoBehaviour
         latestPosition = transform.position;    
         navMeshAgent = GetComponent<NavMeshAgent>();
         rigidbody = GetComponent<Rigidbody>();
+        
     }
 
     public void MoveForward(int tileNum){
@@ -38,7 +39,9 @@ public class CarMovement : MonoBehaviour
         for(int i = 0; i < dice; i++){
             MoveForward(currentNum + 1);
             yield return new WaitForSeconds(INTERVAL);
-        }   
+        }
+        //移動し終わった
+        tilePoints[currentNum].GetComponent<Tile>().Stopped();
     }
 
     void AdjustAngle(){
