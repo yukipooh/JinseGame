@@ -1,5 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3119333197231267077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9031551638066349178}
+  m_Layer: 0
+  m_Name: Roulette_Components
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9031551638066349178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3119333197231267077}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2007535809896476422}
+  - {fileID: 5869271207076110836}
+  - {fileID: 5869271205660520843}
+  - {fileID: 5869271207199127793}
+  - {fileID: 5869271205852031208}
+  - {fileID: 5869271206311431852}
+  m_Father: {fileID: 5869271205409435709}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5869271205409435708
 GameObject:
   m_ObjectHideFlags: 0
@@ -27,13 +63,8 @@ Transform:
   m_LocalPosition: {x: -60.315796, y: -48.961548, z: 211.14128}
   m_LocalScale: {x: 0.9184845, y: 0.9184845, z: 0.9184845}
   m_Children:
-  - {fileID: 2007535809896476422}
-  - {fileID: 5869271207076110836}
-  - {fileID: 5869271205660520843}
-  - {fileID: 5869271207199127793}
-  - {fileID: 5869271205852031208}
   - {fileID: 5869271205702687227}
-  - {fileID: 5869271206311431852}
+  - {fileID: 9031551638066349178}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -65,7 +96,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -229.88007}
   m_LocalScale: {x: 1.08875, y: 1.08875, z: 1.08875}
   m_Children: []
-  m_Father: {fileID: 5869271205409435709}
+  m_Father: {fileID: 9031551638066349178}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -88,6 +119,7 @@ MonoBehaviour:
   roulette: {fileID: 0}
   rotatePerRoulette: 0
   rMaker: {fileID: 0}
+  carMovement: {fileID: 0}
   resultText: {fileID: 5869271205702687229}
   startButton: {fileID: 5869271207199127794}
   stopButton: {fileID: 5869271205852031213}
@@ -121,7 +153,7 @@ RectTransform:
   m_LocalScale: {x: 0.21775, y: 0.21775, z: 0.21775}
   m_Children: []
   m_Father: {fileID: 5869271205409435709}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -201,7 +233,7 @@ RectTransform:
   m_LocalScale: {x: 1.08875, y: 1.08875, z: 1.08875}
   m_Children:
   - {fileID: 5869271207268132584}
-  m_Father: {fileID: 5869271205409435709}
+  m_Father: {fileID: 9031551638066349178}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -321,8 +353,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -229.88007}
   m_LocalScale: {x: 1.08875, y: 1.08875, z: 1.08875}
   m_Children: []
-  m_Father: {fileID: 5869271205409435709}
-  m_RootOrder: 6
+  m_Father: {fileID: 9031551638066349178}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -414,7 +446,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -229.88007}
   m_LocalScale: {x: 1.08875, y: 1.08875, z: 1.08875}
   m_Children: []
-  m_Father: {fileID: 5869271205409435709}
+  m_Father: {fileID: 9031551638066349178}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -490,7 +522,7 @@ RectTransform:
   m_LocalScale: {x: 1.08875, y: 1.08875, z: 1.08875}
   m_Children:
   - {fileID: 5869271207311754531}
-  m_Father: {fileID: 5869271205409435709}
+  m_Father: {fileID: 9031551638066349178}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -743,7 +775,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5869271205409435709}
+    m_TransformParent: {fileID: 9031551638066349178}
     m_Modifications:
     - target: {fileID: 5069113737063494780, guid: 07a11d861bd08a248b5f4e0c862d2851, type: 3}
       propertyPath: m_Name

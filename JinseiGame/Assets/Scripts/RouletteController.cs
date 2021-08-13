@@ -17,7 +17,7 @@ public class RouletteController : MonoBehaviour {
     private int frameCount;
     private bool isPlaying;
     private bool isStop;
-    [SerializeField] private Text resultText;
+    [SerializeField] public Text resultText;
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
     
@@ -80,6 +80,7 @@ public class RouletteController : MonoBehaviour {
         }
         resultText.text = result;
         // retryButton.gameObject.SetActive(true);
+        resultText.gameObject.SetActive(true);
         Invoke ("Move", 0.75f);
         
         
@@ -89,6 +90,7 @@ public class RouletteController : MonoBehaviour {
         isStop = false; //ルーレットを再利用できるように
         startButton.gameObject.SetActive(true); //ルーレットを再利用できるように
         this.transform.parent.gameObject.SetActive(false);  //ルーレットを非表示
+
 
         carMovement.StartCoroutine("Dice"); //resultに応じて移動
     }
