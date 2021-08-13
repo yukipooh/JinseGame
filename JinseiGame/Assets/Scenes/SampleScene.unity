@@ -633,6 +633,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+--- !u!1 &599831502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5869271205702687228, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+  m_PrefabInstance: {fileID: 919496164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &599831503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599831502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &614009220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1387734259949822483, guid: 143b6a52cd7f8fa44af290becf0f50a9, type: 3}
@@ -1073,7 +1093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5869271205409435709, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -48.961548
+      value: -66
       objectReference: {fileID: 0}
     - target: {fileID: 5869271205409435709, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1117,7 +1137,27 @@ PrefabInstance:
       objectReference: {fileID: 993914865}
     - target: {fileID: 5869271205702687227, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -264
+      value: 385
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271205702687227, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -155
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271205702687229, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271205702687229, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271205702687229, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271205702687229, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5869271207076110837, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
       propertyPath: rouletteColors.Array.data[8].b
@@ -1363,7 +1403,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5869271205702687229, guid: 163f0c7dc1a04e14a9b050ad86f384e4, type: 3}
   m_PrefabInstance: {fileID: 919496164}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 599831502}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
