@@ -43,6 +43,13 @@ public class CarMovement : MonoBehaviour
         for(int i = 0; i < dice; i++){
             MoveForward(currentNum + 1);
             yield return new WaitForSeconds(INTERVAL);
+            Tile currentTile = tilePoints[currentNum].GetComponent<Tile>();
+            if(currentTile.tileInfo.isRed){
+                currentTile.Stopped(ref playerData);    //通り過ぎたマスの効果を発揮
+            }
+            if(currentTile.tileInfo.isMustStop){
+                break;  //移動をやめる
+            }
             resultText.text = (dice-i-1).ToString();
         }
         OnTileStopped();    //移動し終わった
