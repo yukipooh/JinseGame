@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class WayMaterialChanger : MonoBehaviour
 {
+
     GameObject[] tiles;
+    
     [SerializeField] Material[] materials;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -19,14 +23,52 @@ public class WayMaterialChanger : MonoBehaviour
 
     void ChangeMaterial(){
         foreach(GameObject tile in tiles){
-            int random = Random.Range(0,materials.Length);
-            tile.GetComponent<MeshRenderer>().material = materials[random];
+            switch(tile.GetComponent<Tile>().tileInfo.tileType){
+                case EnumDefinitions.TileType.START:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.START];
+                    break;
+                case EnumDefinitions.TileType.SALARY:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.SALARY];
+                    break;
+                case EnumDefinitions.TileType.MONEY:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.MONEY];
+                    break;
+                case EnumDefinitions.TileType.EMPLOY:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.EMPLOY];
+                    break;
+                case EnumDefinitions.TileType.JOB_RANKUP:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.JOB_RANKUP];
+                    break;
+                case EnumDefinitions.TileType.MARRY:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.MARRY];
+                    break;
+                case EnumDefinitions.TileType.BIRTH:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.BIRTH];
+                    break;
+                case EnumDefinitions.TileType.TREASURE:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.TREASURE];
+                    break;
+                case EnumDefinitions.TileType.HOUSING:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.HOUSING];
+                    break;
+                case EnumDefinitions.TileType.INSURANCE:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.INSURANCE];
+                    break;
+                case EnumDefinitions.TileType.SETTLE:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.SETTLE];
+                    break;
+                case EnumDefinitions.TileType.GOAL:
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.GOAL];
+                    break;
+            }
+            if(tile.GetComponent<Tile>().tileInfo.isRed){
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.GOAL + 1];
+            }
+            if(tile.GetComponent<Tile>().tileInfo.isMustStop){
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.GOAL + 2];
+            }
+            // int random = Random.Range(0,materials.Length);
+            // tile.GetComponent<MeshRenderer>().material = materials[random];
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

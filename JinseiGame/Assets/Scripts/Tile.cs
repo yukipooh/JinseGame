@@ -18,6 +18,7 @@ public class Tile : MonoBehaviour
                 playerData.currentMoney += tileInfo.money_delta;
                 break;
             case EnumDefinitions.TileType.EMPLOY:
+                playerData.job = tileInfo.job;
                 break;
             case EnumDefinitions.TileType.JOB_RANKUP:
                 break;
