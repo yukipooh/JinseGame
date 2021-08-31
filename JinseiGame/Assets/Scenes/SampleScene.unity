@@ -599,6 +599,8 @@ MonoBehaviour:
   goalTile: {fileID: 4483699807440135120}
   wayMaterialChanger: {fileID: 7159200186214591895}
   rouletteMaker: {fileID: 343944130}
+  carMovement: {fileID: 993914865}
+  constData: {fileID: 1788396442}
 --- !u!4 &669408160
 Transform:
   m_ObjectHideFlags: 0
@@ -6447,6 +6449,10 @@ PrefabInstance:
       propertyPath: resultText
       value: 
       objectReference: {fileID: 1267097266}
+    - target: {fileID: 3028220372991082742, guid: 575c03d6d17fa3c46a6e27d11c3c6ba5, type: 3}
+      propertyPath: currentCourse
+      value: 
+      objectReference: {fileID: 1935768244}
     - target: {fileID: 3028220372991082742, guid: 575c03d6d17fa3c46a6e27d11c3c6ba5, type: 3}
       propertyPath: descriptionText
       value: 

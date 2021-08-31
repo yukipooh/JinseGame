@@ -25,7 +25,7 @@ public class CarMovement : MonoBehaviour
 
     const float ROTATE_FORWARD_ADJUST_ANGLE = 90;
 
-    void Start() {
+    public void Initialize(){
         latestPosition = transform.position;    
         navMeshAgent = GetComponent<NavMeshAgent>();
         rigidbody = GetComponent<Rigidbody>();

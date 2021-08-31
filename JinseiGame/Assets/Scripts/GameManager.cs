@@ -11,10 +11,17 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] WayMaterialChanger wayMaterialChanger;
     [SerializeField] RouletteMaker rouletteMaker;
+    [SerializeField] CarMovement carMovement;
+    [SerializeField] ConstData constData;
 
-
+    //順番大事よ
     void Start() {
+        
+        constData.Initialize();
+        carMovement.Initialize();
         rouletteMaker.Initialize();
         wayMaterialChanger.Initialize();
+        
+        
     }
 }
