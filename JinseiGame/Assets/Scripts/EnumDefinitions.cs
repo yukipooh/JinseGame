@@ -55,4 +55,17 @@ public class EnumDefinitions
         GOUTEI, //豪邸
         
     }
+
+    public enum Course {
+        START = 0,
+        BUSINESS = 1,
+        SPECIAL = 2,
+        MAIN_FIRST = 3,
+        HELL = 4,
+        HEAVEN = 5,
+        MAIN_SECOND = 6,
+        GAMBLE = 7,
+        WORLD = 8,
+        MAIN_THIRD = 9,
+    }
 }

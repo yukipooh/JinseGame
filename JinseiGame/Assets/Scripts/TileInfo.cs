@@ -13,5 +13,5 @@ public class TileInfo : ScriptableObject
     public EnumDefinitions.Insurance insurance;
     public bool isRed;  //通り過ぎても効果を発揮するかどうか
     public bool isMustStop; //強制ストップするかどうか
-
+    
 }

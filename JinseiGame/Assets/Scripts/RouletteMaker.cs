@@ -9,7 +9,7 @@ public class RouletteMaker : MonoBehaviour {
     [SerializeField] private List<Color> rouletteColors;
     [SerializeField] private Image rouletteImage;
     [SerializeField] private RouletteController rController;
-    private void Start () {
+    public void Initialize () {
         float ratePerRoulette = 1 / (float) choices.Count;
         float rotatePerRoulette = 360 / (float) (choices.Count);
         for (int i = 0; i < choices.Count; i++) {

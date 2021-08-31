@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tile : MonoBehaviour
 {
     public TileInfo tileInfo;
+    [SerializeField] Text descriptionText;
     
     public void Stopped(ref PlayerData playerData){
         switch(tileInfo.tileType){
@@ -15,6 +17,10 @@ public class Tile : MonoBehaviour
 
                 break;
             case EnumDefinitions.TileType.MONEY:
+                if((playerData.currentMoney + tileInfo.money_delta) < 0){
+                    playerData.debt += -1 * (playerData.currentMoney + tileInfo.money_delta);
+                    break;
+                }
                 playerData.currentMoney += tileInfo.money_delta;
                 break;
             case EnumDefinitions.TileType.EMPLOY:
@@ -43,6 +49,9 @@ public class Tile : MonoBehaviour
             case EnumDefinitions.TileType.GOAL:
                 break;
         }
+
+        descriptionText.transform.parent.gameObject.SetActive(true);
+        descriptionText.text = tileInfo.description;
 
         Debug.Log(tileInfo.tileType);
         Debug.Log(tileInfo.description);

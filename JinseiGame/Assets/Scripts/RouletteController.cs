@@ -81,7 +81,7 @@ public class RouletteController : MonoBehaviour {
         resultText.text = result;
         // retryButton.gameObject.SetActive(true);
         resultText.gameObject.SetActive(true);
-        Invoke ("Move", 0.75f);
+        Invoke ("Move", 0.5f);
         
         
     }

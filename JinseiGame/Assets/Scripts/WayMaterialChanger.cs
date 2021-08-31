@@ -9,16 +9,22 @@ public class WayMaterialChanger : MonoBehaviour
     GameObject[] tiles;
     
     [SerializeField] Material[] materials;
+    [SerializeField] GameObject map;
     
 
     // Start is called before the first frame update
-    void Start()
+    public void Initialize()
     {
         tiles = new GameObject[transform.childCount];
         for(int i = 0; i < transform.childCount; i++){
             tiles[i] = transform.GetChild(i).gameObject;
         }
-        ChangeMaterial();
+        //ChangeMaterial();
+
+        for(int i = 0; i < map.transform.childCount; i++){
+            int tmp = Random.Range(0,materials.Length);
+            map.transform.GetChild(i).GetComponent<MeshRenderer>().material = materials[tmp];
+        }
     }
 
     void ChangeMaterial(){
