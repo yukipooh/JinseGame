@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: tile_GOAL
   m_EditorClassIdentifier: 
   tileType: 11
-  description: 
+  description: "\u30B4\u30FC\u30EB"
   money_delta: 0
   job: 0
   treasure: 0
   insurance: 0
+  isRed: 0
+  isMustStop: 1

@@ -6,7 +6,12 @@ using UnityEngine.UI;
 public class Tile : MonoBehaviour
 {
     public TileInfo tileInfo;
+    CourseSelect courseSelect;
     [SerializeField] Text descriptionText;
+    
+    void Start() {
+        courseSelect = GameObject.Find("CourseSelect").GetComponent<CourseSelect>();
+    }
     
     public void Stopped(ref PlayerData playerData){
         switch(tileInfo.tileType){
@@ -19,6 +24,7 @@ public class Tile : MonoBehaviour
             case EnumDefinitions.TileType.MONEY:
                 if((playerData.currentMoney + tileInfo.money_delta) < 0){
                     playerData.debt += -1 * (playerData.currentMoney + tileInfo.money_delta);
+                    playerData.currentMoney = 0;
                     break;
                 }
                 playerData.currentMoney += tileInfo.money_delta;
@@ -48,19 +54,23 @@ public class Tile : MonoBehaviour
                 break;
             case EnumDefinitions.TileType.GOAL:
                 break;
+            case EnumDefinitions.TileType.BRANCH:
+                if(gameObject.name == "0031_branch"){
+                    //天国コースと地獄コースへの分岐マス
+                    courseSelect.ShowPanel(1);
+                }
+                if(gameObject.name == "0073_branchB"){
+                    courseSelect.ShowPanel(2);
+                }
+                
+                break;
         }
 
+        
         descriptionText.transform.parent.gameObject.SetActive(true);
         descriptionText.text = tileInfo.description;
 
-        Debug.Log(tileInfo.tileType);
-        Debug.Log(tileInfo.description);
-        Debug.Log(tileInfo.money_delta);
-        Debug.Log(tileInfo.job);
-        Debug.Log(tileInfo.treasure);
-        Debug.Log(tileInfo.insurance);
-        Debug.Log(tileInfo.isRed);
-        Debug.Log(tileInfo.isMustStop);
+        
     }
 
 }

@@ -17,6 +17,7 @@ public class EnumDefinitions
         INSURANCE,  //保険契約
         SETTLE, //決算
         GOAL,   //ゴール
+        BRANCH, //枝分かれ
     }
 
     public enum Job {

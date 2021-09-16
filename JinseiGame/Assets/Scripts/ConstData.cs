@@ -19,7 +19,7 @@ public class ConstData : MonoBehaviour
 
     public static Dictionary<EnumDefinitions.Course, GameObject> Courses = new Dictionary<EnumDefinitions.Course, GameObject>();
     public static Dictionary<int, int> CourseLink = new Dictionary<int, int>(); //<コース前、コース後>
-
+    
 
     public void Initialize(){
 //Dictionaryにデータの追加

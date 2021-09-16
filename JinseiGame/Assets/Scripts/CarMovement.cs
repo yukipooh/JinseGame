@@ -21,7 +21,7 @@ public class CarMovement : MonoBehaviour
     Rigidbody rigidbody;
     const float INTERVAL = 0.5f;    //次のマスに進むまでに待つ時間
 
-    
+    public bool isStopping = false;    //車が一時停止しているかどうかのフラグ
 
     const float ROTATE_FORWARD_ADJUST_ANGLE = 90;
 
@@ -31,8 +31,8 @@ public class CarMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         playerData = GetComponent<PlayerData>();
 
-        currentCourse = ConstData.Courses[EnumDefinitions.Course.BUSINESS];
-        currentCourseEnum = EnumDefinitions.Course.BUSINESS;
+        currentCourse = ConstData.Courses[EnumDefinitions.Course.START];
+        currentCourseEnum = EnumDefinitions.Course.START;
     }
 
     public void MoveForward(int tileNum){
@@ -63,9 +63,17 @@ public class CarMovement : MonoBehaviour
             Tile currentTile = currentCourse.transform.GetChild(currentNum).GetComponent<Tile>();
             if(currentTile.tileInfo.isRed){
                 currentTile.Stopped(ref playerData);    //通り過ぎたマスの効果を発揮
-                while(!Input.GetKeyDown(KeyCode.Return)){
-                    yield return null; 
+                isStopping = true;
+                if(currentTile.tileInfo.tileType == EnumDefinitions.TileType.BRANCH){
+                    while(isStopping){
+                        yield return null; 
+                    }
+                }else{
+                    while(!Input.GetKeyDown(KeyCode.Return)){
+                        yield return null;
+                    }
                 }
+            
             }
             if(currentTile.tileInfo.isMustStop){
                 break;  //移動をやめる
