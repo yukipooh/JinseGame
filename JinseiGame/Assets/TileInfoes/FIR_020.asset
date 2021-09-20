@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 134def2eba15ce2479e7e825efc273f5, type: 3}
-  m_Name: SEC_073_BR
+  m_Name: FIR_020
   m_EditorClassIdentifier: 
-  tileType: 11
-  description: "\u9032\u307F\u305F\u3044\u30B3\u30FC\u30B9\u3092\u9078\u307C\u3046\u3002"
+  tileType: 0
+  description: "\u521D\u3081\u3066\u306E\u7D66\u6599\u7372\u5F97\u304A\u3081\u3067\u3068\u3046\uFF01\u4ECA\u56DE\u306E\u7D66\u6599\u306F"
   money_delta: 0
   job: 0
   treasure: 0
   insurance: 0
-  isRed: 0
-  isMustStop: 1
-  isSalaryTile: 0
+  isRed: 1
+  isMustStop: 0
+  isSalaryTile: 1

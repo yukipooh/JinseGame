@@ -33,9 +33,6 @@ public class WayMaterialChanger : MonoBehaviour
                 case EnumDefinitions.TileType.START:
                 tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.START];
                     break;
-                case EnumDefinitions.TileType.SALARY:
-                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.SALARY];
-                    break;
                 case EnumDefinitions.TileType.MONEY:
                 tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.MONEY];
                     break;

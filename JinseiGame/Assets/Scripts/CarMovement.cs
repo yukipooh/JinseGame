@@ -54,8 +54,13 @@ public class CarMovement : MonoBehaviour
         }
     }
     
-    public IEnumerator Dice(){
-        int dice = int.Parse(RouletteController.result);   //ルーレット回すよ
+    public IEnumerator Dice(bool isUseRoulette = true, int moveNum = 0){
+        int dice;
+        if(isUseRoulette){
+            dice = int.Parse(RouletteController.result);   //ルーレット回すよ
+        }else{
+            dice = moveNum;
+        }
         Debug.Log(dice);
         for(int i = 0; i < dice; i++){
             MoveForward(currentNum + 1);

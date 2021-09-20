@@ -19,7 +19,7 @@ public class ConstData : MonoBehaviour
 
     public static Dictionary<EnumDefinitions.Course, GameObject> Courses = new Dictionary<EnumDefinitions.Course, GameObject>();
     public static Dictionary<int, int> CourseLink = new Dictionary<int, int>(); //<コース前、コース後>
-    
+    public static Dictionary<EnumDefinitions.Job, int> Salaries = new Dictionary<EnumDefinitions.Job, int>();   //職業の給料
 
     public void Initialize(){
 //Dictionaryにデータの追加
@@ -43,5 +43,26 @@ public class ConstData : MonoBehaviour
         CourseLink.Add((int)EnumDefinitions.Course.MAIN_SECOND, (int)EnumDefinitions.Course.GAMBLE);
         CourseLink.Add((int)EnumDefinitions.Course.GAMBLE, (int)EnumDefinitions.Course.MAIN_THIRD);
         CourseLink.Add((int)EnumDefinitions.Course.WORLD, (int)EnumDefinitions.Course.MAIN_THIRD);
+    
+        Salaries.Add(EnumDefinitions.Job.FREETER, 12000);
+        Salaries.Add(EnumDefinitions.Job.CHEF, 35000);
+        Salaries.Add(EnumDefinitions.Job.DESIGNER, 40000);
+        Salaries.Add(EnumDefinitions.Job.ATHLETE, 45000);
+        Salaries.Add(EnumDefinitions.Job.ENGINEER, 42500);
+        Salaries.Add(EnumDefinitions.Job.LAWYER, 50000);
+        Salaries.Add(EnumDefinitions.Job.DOCTER, 55000);
+        Salaries.Add(EnumDefinitions.Job.SALARYMAN, 20000);
+        Salaries.Add(EnumDefinitions.Job.GAMBLER, 7500);
+        Salaries.Add(EnumDefinitions.Job.OIL_TRANSPORTER, 35000);
+        //ランクアップ↓----------------------------------------------
+        Salaries.Add(EnumDefinitions.Job.CHEF_MASTER, 65000);
+        Salaries.Add(EnumDefinitions.Job.TOP_DESIGNER, 70000);
+        Salaries.Add(EnumDefinitions.Job.TOP_ATHLETE, 80000);
+        Salaries.Add(EnumDefinitions.Job.FULL_STACK_ENGINEER, 70000);
+        Salaries.Add(EnumDefinitions.Job.TOP_LAWYER, 82500);
+        Salaries.Add(EnumDefinitions.Job.DOCTER_MASTER, 85000);
+        Salaries.Add(EnumDefinitions.Job.SALARYMAN_MASTER, 50000);
+        Salaries.Add(EnumDefinitions.Job.TOP_GAMBLER, 15000);
+        Salaries.Add(EnumDefinitions.Job.OIL_MASTER, 100000);
     }
 }

@@ -92,6 +92,6 @@ public class RouletteController : MonoBehaviour {
         this.transform.parent.gameObject.SetActive(false);  //ルーレットを非表示
 
 
-        carMovement.StartCoroutine("Dice"); //resultに応じて移動
+        carMovement.StartCoroutine(carMovement.Dice(true,0)); //resultに応じて移動
     }
 }

@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 134def2eba15ce2479e7e825efc273f5, type: 3}
-  m_Name: JOB_006
+  m_Name: BUSI_003
   m_EditorClassIdentifier: 
-  tileType: 0
-  description: 
+  tileType: 2
+  description: "\u7121\u4E8B\u5C31\u6D3B\u306B\u6210\u529F\u3057\u3001\u541B\u306F\u300C\u30D3\u30B8\u30CD\u30B9\u30DE\u30F3\u300D\u306B\u306A\u3063\u305F\u3088\u3002\u304A\u3081\u3067\u3068\u3046\uFF01"
   money_delta: 0
-  job: 0
+  job: 7
   treasure: 0
   insurance: 0
+  isRed: 1
+  isMustStop: 0
+  isSalaryTile: 0

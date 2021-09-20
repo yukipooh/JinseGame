@@ -1324,7 +1324,7 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\u3046\u3093\u3061\u3092\u3072\u308D\u3063\u305F\u3088"
@@ -2905,7 +2905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 06624ab08ed1ab140960be06afb7a2e0, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!4 &328552042207758649
 Transform:
@@ -3347,7 +3347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 5ab10f293c8d6fe4a819bd6b9eb70769, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!33 &595005336499535735
 MeshFilter:
@@ -4932,7 +4932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 8db1b5d86fa5e194092cc43cdbbe18e3, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!23 &1652027662259170232
 MeshRenderer:
@@ -6183,7 +6183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 45bbcaff55775b947a19c465aa2f479d, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!33 &2474697306237891208
 MeshFilter:
@@ -6817,7 +6817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 85ad72787ba339a49b903856c0d3d75d, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!4 &2890236290136165278
 Transform:
@@ -8222,7 +8222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: ef622742f74a2414d81cf69274c649e3, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!4 &3681458075716289522
 Transform:
@@ -8568,7 +8568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 94a83a04ded873e4597a1d8f45cf5434, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!1 &3953029339463607351
 GameObject:
@@ -9387,7 +9387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 0e2941ab651141f419d657bfdeb3e307, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!1 &4581552401574876096
 GameObject:
@@ -9467,7 +9467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 449280e35a7eadf4f9d98fafc3442b20, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!33 &4635584669341949593
 MeshFilter:
@@ -9768,7 +9768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 29a91e0080ed1594b9f9c87a96990cf7, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!1 &4863115181985597716
 GameObject:
@@ -9834,7 +9834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 4376239323a0fe44fba9bdf6307f11e2, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!33 &4873384352793191555
 MeshFilter:
@@ -9883,7 +9883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: ea679306a082c61418d8a2d7be417fb0, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!4 &4884081757961673967
 Transform:
@@ -10501,7 +10501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 390ff9ad5d9f7b0498c0949d584c5496, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!23 &5374655888848108755
 MeshRenderer:
@@ -10931,7 +10931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 99cbf40aee6ed9c4faf223cae993b51b, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!23 &5648718787540407104
 MeshRenderer:
@@ -11871,7 +11871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: bd97e438ff6a1504b8894c3ed13d3ced, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!33 &6094026800036357357
 MeshFilter:
@@ -12060,7 +12060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 744826b88f2d334489d022c828970a45, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!33 &6169889200390871866
 MeshFilter:
@@ -12476,7 +12476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 1036c8e357ba08946863aeca6d064921, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!1 &6564917126960776180
 GameObject:
@@ -14994,7 +14994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 9b790db02c4b00443811c01b5b497bd6, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!33 &7940939359463213345
 MeshFilter:
@@ -16578,7 +16578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 4ab9a59ea6484684bb6f3700c81e5c50, type: 2}
+  tileInfo: {fileID: 11400000, guid: 73f7990ca4460ea4a94f0281fc71ea1a, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!23 &8898304635429742574
 MeshRenderer:

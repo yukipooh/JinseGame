@@ -6,7 +6,6 @@ public class EnumDefinitions
 {
     public enum TileType {
         START,  //スタート
-        SALARY, //給料
         MONEY,  //お金変動
         EMPLOY, //就職
         JOB_RANKUP, //職業ランクアップ
@@ -22,16 +21,26 @@ public class EnumDefinitions
 
     public enum Job {
         FREETER,    //フリーター
-        CHEF,
-        DESIGNER,
-        ATHLETE,
-        ENGINEER,
-        LAWYER,
-        DOCTER,
-        SALARYMAN,
-        GAMBLER,
-        YASUO_MAIN,
-        POKEMON_MASTER,
+        CHEF,   //コック
+        DESIGNER,   //デザイナー
+        ATHLETE,    //アスリート
+        ENGINEER,   //エンジニア
+        LAWYER, //弁護士
+        DOCTER, //医者
+        SALARYMAN,  //ビジネスマン
+        GAMBLER,    //ギャンブラー
+        OIL_TRANSPORTER,    //石油取引人
+        //ランクアップ↓---------------------------
+        CHEF_MASTER,    //コック長
+        TOP_DESIGNER,   //トップデザイナー
+        TOP_ATHLETE,    //トップアスリート
+        FULL_STACK_ENGINEER,    //フルスタックエンジニア
+        TOP_LAWYER, //カリスマ弁護士
+        DOCTER_MASTER,  //院長
+        SALARYMAN_MASTER,   //部長
+        TOP_GAMBLER,    //凄腕ギャンブラー
+        OIL_MASTER, //石油王
+        
     }
 
     public enum Treasure{

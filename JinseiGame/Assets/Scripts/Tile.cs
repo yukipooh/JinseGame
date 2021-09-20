@@ -18,9 +18,6 @@ public class Tile : MonoBehaviour
             case EnumDefinitions.TileType.START:
                 
                 break;
-            case EnumDefinitions.TileType.SALARY:
-
-                break;
             case EnumDefinitions.TileType.MONEY:
                 if((playerData.currentMoney + tileInfo.money_delta) < 0){
                     playerData.debt += -1 * (playerData.currentMoney + tileInfo.money_delta);
@@ -31,6 +28,8 @@ public class Tile : MonoBehaviour
                 break;
             case EnumDefinitions.TileType.EMPLOY:
                 playerData.job = tileInfo.job;
+                CarMovement carMovement = playerData.gameObject.GetComponent<CarMovement>();
+                StartCoroutine(MoveToNextCourseTile(carMovement));
                 break;
             case EnumDefinitions.TileType.JOB_RANKUP:
                 break;
@@ -66,11 +65,21 @@ public class Tile : MonoBehaviour
                 break;
         }
 
-        
         descriptionText.transform.parent.gameObject.SetActive(true);
         descriptionText.text = tileInfo.description;
 
+        if(tileInfo.isSalaryTile){
+            playerData.currentMoney += ConstData.Salaries[playerData.job];  //給料追加
+            descriptionText.text += (ConstData.Salaries[playerData.job].ToString() + "$だ！");
+        }
         
+    }
+
+    IEnumerator MoveToNextCourseTile(CarMovement carMovement){
+        while(!Input.GetKeyDown(KeyCode.Return)){
+            yield return null;
+        }
+        carMovement.StartCoroutine(carMovement.Dice(false,transform.parent.childCount - transform.GetSiblingIndex()));
     }
 
 }

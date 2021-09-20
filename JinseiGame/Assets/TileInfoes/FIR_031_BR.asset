@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134def2eba15ce2479e7e825efc273f5, type: 3}
   m_Name: FIR_031_BR
   m_EditorClassIdentifier: 
-  tileType: 12
+  tileType: 11
   description: "\u904B\u547D\u306E\u5206\u304B\u308C\u9053\u3002\u5929\u56FD\u30B3\u30FC\u30B9\u3068\u5730\u7344\u30B3\u30FC\u30B9\u3001\u3069\u3061\u3089\u306B\u9032\u307F\u307E\u3059\u304B\uFF1F"
   money_delta: 0
   job: 0
@@ -20,3 +20,4 @@ MonoBehaviour:
   insurance: 0
   isRed: 1
   isMustStop: 0
+  isSalaryTile: 0
