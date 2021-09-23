@@ -5,34 +5,50 @@ using UnityEngine.AI;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class CarMovement : MonoBehaviour
+public class CarMovement : MonoBehaviourPunCallbacks
 {
-    [SerializeField] GameObject roulette;   //RoulettePrefab
-    [SerializeField] Text resultText; // resultText
-    [SerializeField] Text descriptionText;  //description
+    GameObject roulette;   //RoulettePrefab
+    Text resultText; // resultText
+    Text descriptionText;  //description
+    GameManager gameManager;
     PlayerData playerData;
     NavMeshAgent navMeshAgent;
+    
     Tween tween;
     Vector3 latestPosition;
     int currentNum = 0; //現在いるタイル
     public GameObject currentCourse;    //現在いるコース(オブジェクト)
     public EnumDefinitions.Course currentCourseEnum;  //現在いるコース(enum)
     Rigidbody rigidbody;
-    const float INTERVAL = 0.5f;    //次のマスに進むまでに待つ時間
+    const float INTERVAL = 0.6f;    //次のマスに進むまでに待つ時間
 
     public bool isStopping = false;    //車が一時停止しているかどうかのフラグ
 
     const float ROTATE_FORWARD_ADJUST_ANGLE = 90;
 
     public void Initialize(){
+        
+        
+    }
+
+    private void Awake() {
         latestPosition = transform.position;    
         navMeshAgent = GetComponent<NavMeshAgent>();
         rigidbody = GetComponent<Rigidbody>();
         playerData = GetComponent<PlayerData>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        roulette = GameObject.Find("Roulette_Components");
+        resultText = GameObject.Find("ResultText").GetComponent<Text>();
+        descriptionText = GameObject.Find("descriptionText").GetComponent<Text>();
 
         currentCourse = ConstData.Courses[EnumDefinitions.Course.START];
         currentCourseEnum = EnumDefinitions.Course.START;
+
+
+        GameManager.carObjects.Add(photonView.ViewID,photonView.gameObject);
     }
 
     public void MoveForward(int tileNum){
@@ -68,7 +84,7 @@ public class CarMovement : MonoBehaviour
             Tile currentTile = currentCourse.transform.GetChild(currentNum).GetComponent<Tile>();
             if(currentTile.tileInfo.isRed){
                 currentTile.Stopped(ref playerData);    //通り過ぎたマスの効果を発揮
-                isStopping = true;
+                isStopping = true;  //ブランチを選ぶタイミングでfalseに変える
                 if(currentTile.tileInfo.tileType == EnumDefinitions.TileType.BRANCH){
                     while(isStopping){
                         yield return null; 

@@ -6,7 +6,7 @@ using UnityEditor;
 public class WayMaterialChanger : MonoBehaviour
 {
 
-    GameObject[] tiles;
+    List<GameObject> tiles = new List<GameObject>();
     
     [SerializeField] Material[] materials;
     [SerializeField] GameObject map;
@@ -15,16 +15,14 @@ public class WayMaterialChanger : MonoBehaviour
     // Start is called before the first frame update
     public void Initialize()
     {
-        tiles = new GameObject[transform.childCount];
-        for(int i = 0; i < transform.childCount; i++){
-            tiles[i] = transform.GetChild(i).gameObject;
+        int courseNum = transform.GetChild(0).childCount;   //コースの数
+        for(int i = 0; i < courseNum; i++){
+            for(int j = 0; j < transform.GetChild(0).GetChild(i).childCount; j++){
+                tiles.Add(transform.GetChild(0).GetChild(i).GetChild(j).gameObject);
+            }
         }
-        //ChangeMaterial();
+        ChangeMaterial();
 
-        for(int i = 0; i < map.transform.childCount; i++){
-            int tmp = Random.Range(0,materials.Length);
-            map.transform.GetChild(i).GetComponent<MeshRenderer>().material = materials[tmp];
-        }
     }
 
     void ChangeMaterial(){
@@ -69,6 +67,9 @@ public class WayMaterialChanger : MonoBehaviour
             }
             if(tile.GetComponent<Tile>().tileInfo.isMustStop){
                 tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.GOAL + 2];
+            }
+            if(tile.GetComponent<Tile>().tileInfo.isSalaryTile){
+                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.GOAL + 3];
             }
             // int random = Random.Range(0,materials.Length);
             // tile.GetComponent<MeshRenderer>().material = materials[random];

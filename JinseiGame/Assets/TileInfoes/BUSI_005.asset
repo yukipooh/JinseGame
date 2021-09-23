@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: BUSI_005
   m_EditorClassIdentifier: 
   tileType: 1
-  description: 
-  money_delta: 0
+  description: "\u4F1A\u793E\u306B\u884C\u304F\u9014\u4E2D\u3067\u30AC\u30E0\u3092\u8E0F\u3093\u3065\u3051\u308B\u30021000$\u5931\u3046\u3002"
+  money_delta: -1000
   job: 0
   treasure: 0
   insurance: 0
   isRed: 0
   isMustStop: 0
   isSalaryTile: 0
+  isMoveToNextCourseTile: 0

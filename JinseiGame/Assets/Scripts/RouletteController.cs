@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class RouletteController : MonoBehaviour {
+public class RouletteController : MonoBehaviourPunCallbacks {
     [HideInInspector] public GameObject roulette;
     [HideInInspector] public float rotatePerRoulette;
     [HideInInspector] public RouletteMaker rMaker;
 
-    [SerializeField] CarMovement carMovement;
+    // [SerializeField] CarMovement carMovement;
     public static string result;
     private float rouletteSpeed;
     private float slowDownSpeed;
@@ -20,6 +22,7 @@ public class RouletteController : MonoBehaviour {
     [SerializeField] public Text resultText;
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
+    [SerializeField] GameManager gameManager;
     
     // [SerializeField] private Button retryButton;
 
@@ -81,7 +84,7 @@ public class RouletteController : MonoBehaviour {
         resultText.text = result;
         // retryButton.gameObject.SetActive(true);
         resultText.gameObject.SetActive(true);
-        Invoke ("Move", 0.5f);
+        Invoke (nameof(Move), 0.5f);
         
         
     }
@@ -91,7 +94,10 @@ public class RouletteController : MonoBehaviour {
         startButton.gameObject.SetActive(true); //ルーレットを再利用できるように
         this.transform.parent.gameObject.SetActive(false);  //ルーレットを非表示
 
-
+        // foreach(PhotonView photonView in PhotonNetwork.PhotonViewCollection){
+        //     Debug.Log($"{photonView.gameObject.name}({photonView.ViewID})");
+        // }
+        CarMovement carMovement = GameManager.carObjects[1001].GetComponent<CarMovement>();
         carMovement.StartCoroutine(carMovement.Dice(true,0)); //resultに応じて移動
     }
 }

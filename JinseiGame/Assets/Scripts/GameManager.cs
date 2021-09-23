@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public List<GameObject> playerCars = new List<GameObject>();
     public GameObject startTile;
     public GameObject goalTile;
+    public static Dictionary<int, GameObject> carObjects = new Dictionary<int, GameObject>();
 
 
     [SerializeField] WayMaterialChanger wayMaterialChanger;

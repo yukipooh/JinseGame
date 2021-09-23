@@ -29,7 +29,9 @@ public class Tile : MonoBehaviour
             case EnumDefinitions.TileType.EMPLOY:
                 playerData.job = tileInfo.job;
                 CarMovement carMovement = playerData.gameObject.GetComponent<CarMovement>();
-                StartCoroutine(MoveToNextCourseTile(carMovement));
+                if(tileInfo.isMoveToNextCourseTile){
+                    StartCoroutine(MoveToNextCourseTile(carMovement));
+                }
                 break;
             case EnumDefinitions.TileType.JOB_RANKUP:
                 break;
@@ -75,6 +77,7 @@ public class Tile : MonoBehaviour
         
     }
 
+    //このコルーチン　isRedのマスに適用するとDiceが重複してバグるから注意
     IEnumerator MoveToNextCourseTile(CarMovement carMovement){
         while(!Input.GetKeyDown(KeyCode.Return)){
             yield return null;

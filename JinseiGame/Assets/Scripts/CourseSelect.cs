@@ -10,7 +10,7 @@ public class CourseSelect : MonoBehaviour
     [SerializeField] Text leftCourseButtonText;
     [SerializeField] Button rightCourseButton;
     [SerializeField] Button leftCourseButton;
-    [SerializeField] CarMovement carMovement;
+    CarMovement carMovement;
     // [SerializeField] GameObject rightCourse;
     // [SerializeField] GameObject leftCourse;
 
@@ -35,11 +35,13 @@ public class CourseSelect : MonoBehaviour
     /// <param name="index">何番目の分岐か(0番目 = ビジネスor専門)</param>
     void OnClickRightCourseButton(int index){
         ConstData.CourseLink[(int)courseLinkOriginCourses[index]] = (int)rightButtonCourses[index];
+        carMovement = GameManager.carObjects[1001].GetComponent<CarMovement>();
         carMovement.isStopping = false;
         courseSelectPanel.SetActive(false);
     }
     void OnClickLeftCourseButton(int index){
         ConstData.CourseLink[(int)courseLinkOriginCourses[index]] = (int)leftButtonCourses[index];
+        carMovement = GameManager.carObjects[1001].GetComponent<CarMovement>();
         carMovement.isStopping = false;
         courseSelectPanel.SetActive(false);
     }

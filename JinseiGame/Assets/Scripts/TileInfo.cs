@@ -14,5 +14,6 @@ public class TileInfo : ScriptableObject
     public bool isRed;  //通り過ぎても効果を発揮するかどうか
     public bool isMustStop; //強制ストップするかどうか
     public bool isSalaryTile;   //給料日マスかどうかのフラグ
+    public bool isMoveToNextCourseTile; //止まったあと自動的に次のコースの最初まで移動するかどうかのフラグ
     
 }
