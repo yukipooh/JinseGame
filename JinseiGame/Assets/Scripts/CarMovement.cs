@@ -48,8 +48,8 @@ public class CarMovement : MonoBehaviourPunCallbacks
         currentCourseEnum = EnumDefinitions.Course.START;
 
         GameManager.carMovements.Add(this);
-        photonView.name = "player";
-        gameManager.SetPlayerNameText(photonView.name + photonView.ViewID.ToString());
+        photonView.name = PhotonNetwork.NickName;
+        gameManager.SetPlayerNameText(PhotonNetwork.NickName);
     }
 
     public void MoveForward(int tileNum){
