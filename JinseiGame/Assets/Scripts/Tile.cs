@@ -38,10 +38,36 @@ public class Tile : MonoBehaviour
             case EnumDefinitions.TileType.MARRY:
                 if(playerData.familyNum == 1){
                     playerData.familyNum++; //配偶者を追加
+                    GameObject pin = Instantiate(GameManager.femalePin,new Vector3(0,0,0),Quaternion.identity,playerData.transform.GetChild(0).GetChild(0));
+                    pin.transform.localPosition = new Vector3(-0.06518836f,0.00303f,0.01046f);
+                    pin.transform.localRotation = Quaternion.Euler(0,0,-135);
+
                 }
                 break;
             case EnumDefinitions.TileType.BIRTH:
                 playerData.familyNum++; //子供追加
+                switch(playerData.familyNum){
+                    case 3:
+                        GameObject child_1 = Instantiate(GameManager.childPin,new Vector3(0,0,0),Quaternion.identity,playerData.transform.GetChild(0).GetChild(2));
+                        child_1.transform.localPosition = new Vector3(-0.06518836f,0.00303f,0.00934f);
+                        child_1.transform.localRotation = Quaternion.Euler(0,0,-135);
+                        break;
+                    case 4:
+                        GameObject child_2 = Instantiate(GameManager.childPin,new Vector3(0,0,0),Quaternion.identity,playerData.transform.GetChild(0).GetChild(3));
+                        child_2.transform.localPosition = new Vector3(-0.06518836f,0.00303f,0.00934f);
+                        child_2.transform.localRotation = Quaternion.Euler(0,0,-135);
+                        break;
+                    case 5:
+                        GameObject child_3 = Instantiate(GameManager.childPin,new Vector3(0,0,0),Quaternion.identity,playerData.transform.GetChild(0).GetChild(4));
+                        child_3.transform.localPosition = new Vector3(-0.06518836f,0.00303f,0.00934f);
+                        child_3.transform.localRotation = Quaternion.Euler(0,0,-135);
+                        break;
+                    case 6:
+                        GameObject child_4 = Instantiate(GameManager.childPin,new Vector3(0,0,0),Quaternion.identity,playerData.transform.GetChild(0).GetChild(5));
+                        child_4.transform.localPosition = new Vector3(-0.06518836f,0.00303f,0.00934f);
+                        child_4.transform.localRotation = Quaternion.Euler(0,0,-135);
+                        break;
+                }
                 break;
             case EnumDefinitions.TileType.TREASURE:
                 playerData.treasures.Add(tileInfo.treasure);

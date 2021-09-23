@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public int currentMoney = 0;   //所持金
+    public int currentMoney = 10000;   //所持金
     public int debt = 0;   //借金
     public EnumDefinitions.Job job = EnumDefinitions.Job.FREETER; //職業
     public EnumDefinitions.House house = EnumDefinitions.House.NONE;    //持ち家
