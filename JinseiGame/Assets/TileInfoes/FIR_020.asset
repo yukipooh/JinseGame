@@ -21,3 +21,4 @@ MonoBehaviour:
   isRed: 1
   isMustStop: 0
   isSalaryTile: 1
+  isMoveToNextCourseTile: 0

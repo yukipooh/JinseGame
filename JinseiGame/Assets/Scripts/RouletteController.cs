@@ -94,10 +94,14 @@ public class RouletteController : MonoBehaviourPunCallbacks {
         startButton.gameObject.SetActive(true); //ルーレットを再利用できるように
         this.transform.parent.gameObject.SetActive(false);  //ルーレットを非表示
 
-        // foreach(PhotonView photonView in PhotonNetwork.PhotonViewCollection){
-        //     Debug.Log($"{photonView.gameObject.name}({photonView.ViewID})");
-        // }
-        CarMovement carMovement = GameManager.carObjects[1001].GetComponent<CarMovement>();
-        carMovement.StartCoroutine(carMovement.Dice(true,0)); //resultに応じて移動
+        foreach(PhotonView photonView in PhotonNetwork.PhotonViewCollection){
+            Debug.Log($"{photonView.gameObject.name}({photonView.ViewID})");
+        }
+        
+        foreach(CarMovement carMovement in GameManager.carMovements){
+            if(carMovement.photonView.IsMine){
+                carMovement.StartCoroutine(carMovement.Dice(true,0)); //resultに応じて移動
+            }
+        }
     }
 }

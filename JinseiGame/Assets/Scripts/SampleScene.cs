@@ -1,12 +1,16 @@
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 // MonoBehaviourPunCallbacksを継承して、PUNのコールバックを受け取れるようにする
 public class SampleScene : MonoBehaviourPunCallbacks
 {
     [SerializeField] GameManager gameManager;
     [SerializeField] GameObject startTile;
+    
+
+    public static GameObject localCar;
 
     private void Start() {
         // PhotonServerSettingsの設定内容を使ってマスターサーバーへ接続する
@@ -23,10 +27,7 @@ public class SampleScene : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom() {
         // ランダムな座標に自身のアバター（ネットワークオブジェクト）を生成する
         Vector3 startPos = startTile.transform.position;
-        int playerNum = 4;
-        for(int i = 0; i < playerNum; i++){
-            PhotonNetwork.Instantiate("Car", startPos + new Vector3(i,0,0), Quaternion.identity);
-            
-        }
+        PhotonNetwork.Instantiate("Car", startPos + new Vector3(PhotonNetwork.CountOfPlayersInRooms,0,0), Quaternion.identity);
+        
     }
 }

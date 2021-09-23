@@ -29,10 +29,10 @@ public class CarMovement : MonoBehaviourPunCallbacks
 
     const float ROTATE_FORWARD_ADJUST_ANGLE = 90;
 
-    public void Initialize(){
+    // public void Initialize(){
         
         
-    }
+    // }
 
     private void Awake() {
         latestPosition = transform.position;    
@@ -47,8 +47,9 @@ public class CarMovement : MonoBehaviourPunCallbacks
         currentCourse = ConstData.Courses[EnumDefinitions.Course.START];
         currentCourseEnum = EnumDefinitions.Course.START;
 
-
-        GameManager.carObjects.Add(photonView.ViewID,photonView.gameObject);
+        GameManager.carMovements.Add(this);
+        photonView.name = "player";
+        gameManager.SetPlayerNameText(photonView.name + photonView.ViewID.ToString());
     }
 
     public void MoveForward(int tileNum){
@@ -81,9 +82,11 @@ public class CarMovement : MonoBehaviourPunCallbacks
         for(int i = 0; i < dice; i++){
             MoveForward(currentNum + 1);
             yield return new WaitForSeconds(INTERVAL);
+            Debug.Log(currentNum);
             Tile currentTile = currentCourse.transform.GetChild(currentNum).GetComponent<Tile>();
             if(currentTile.tileInfo.isRed){
                 currentTile.Stopped(ref playerData);    //通り過ぎたマスの効果を発揮
+                gameManager.SetCurrentMoneyText(playerData.currentMoney);
                 isStopping = true;  //ブランチを選ぶタイミングでfalseに変える
                 if(currentTile.tileInfo.tileType == EnumDefinitions.TileType.BRANCH){
                     while(isStopping){
@@ -110,6 +113,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
         currentCourse.transform.GetChild(currentNum).GetComponent<Tile>().Stopped(ref playerData);
         resultText.gameObject.SetActive(false);
         descriptionText.transform.parent.gameObject.SetActive(true);
+        gameManager.SetCurrentMoneyText(playerData.currentMoney);
     }
 
     void Update() {
