@@ -32,7 +32,11 @@ public class WayMaterialChanger : MonoBehaviour
                 tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.START];
                     break;
                 case EnumDefinitions.TileType.MONEY:
-                tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.MONEY];
+                if(tile.GetComponent<Tile>().tileInfo.money_delta > 0){
+                    tile.GetComponent<MeshRenderer>().material = materials[5];
+                }else{
+                    tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.MONEY];
+                }
                     break;
                 case EnumDefinitions.TileType.EMPLOY:
                 tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.EMPLOY];
@@ -71,6 +75,7 @@ public class WayMaterialChanger : MonoBehaviour
             if(tile.GetComponent<Tile>().tileInfo.isSalaryTile){
                 tile.GetComponent<MeshRenderer>().material = materials[(int)EnumDefinitions.TileType.GOAL + 3];
             }
+            
             // int random = Random.Range(0,materials.Length);
             // tile.GetComponent<MeshRenderer>().material = materials[random];
         }

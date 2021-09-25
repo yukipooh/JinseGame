@@ -93,8 +93,11 @@ public class CarMovement : MonoBehaviourPunCallbacks
                         yield return null; 
                     }
                 }else{
-                    while(!Input.GetKeyDown(KeyCode.Return)){
-                        yield return null;
+                    //まだ移動できるとき
+                    if(i != dice - 1){
+                        while(!Input.GetKeyDown(KeyCode.Return)){
+                            yield return null;
+                        }
                     }
                 }
             
