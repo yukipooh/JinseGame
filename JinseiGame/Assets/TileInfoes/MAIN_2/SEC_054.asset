@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SEC_054
   m_EditorClassIdentifier: 
   tileType: 1
-  description: "1000$\u3082\u3089\u3046\uFF01"
+  description: "\u81EA\u8CA9\u6A5F\u306E\u304A\u3064\u308A\u53D6\u308A\u5FD8\u308C\u3066\u308B\u3084\u3093\uFF011000$\u3082\u3089\u3046\u3002"
   money_delta: 1000
   job: 0
   treasure: 0

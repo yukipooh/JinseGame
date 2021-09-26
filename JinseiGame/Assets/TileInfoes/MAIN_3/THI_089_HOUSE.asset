@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: THI_089_HOUSE
   m_EditorClassIdentifier: 
   tileType: 7
-  description: 
+  description: "\u5148\u7740\u9806\u3067\u5BB6\u3092\u8CFC\u5165\u3067\u304D\u308B\uFF01\u706B\u707D\u4FDD\u967A\u306B8000$\u3067\u5165\u308C\u308B\u3002"
   money_delta: 0
   job: 0
   treasure: 0

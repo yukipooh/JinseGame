@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FIR_027
   m_EditorClassIdentifier: 
   tileType: 1
-  description: "30000$\u3082\u3089\u3046\uFF01"
+  description: "\u793E\u5185\u3067\u306F\u8A55\u5224\u4E0A\u3005\uFF01\u306A\u3093\u3068\u30DC\u30FC\u30CA\u30B9\u3092\u3082\u3089\u3063\u305F\uFF0130000$\u3082\u3089\u3046\u3002"
   money_delta: 30000
   job: 0
   treasure: 0
