@@ -20,5 +20,5 @@ MonoBehaviour:
   insurance: 0
   isRed: 0
   isMustStop: 1
-  isSalaryTile: 0
+  isSalaryTile: 1
   isMoveToNextCourseTile: 0

@@ -646,6 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb89b7f9f5173214badd75c75c1c4ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roulette: {fileID: 0}
   currentCourse: {fileID: 0}
   currentCourseEnum: 0
   isStopping: 0

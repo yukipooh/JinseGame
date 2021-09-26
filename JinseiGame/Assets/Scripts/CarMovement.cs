@@ -10,7 +10,7 @@ using Photon.Realtime;
 
 public class CarMovement : MonoBehaviourPunCallbacks
 {
-    GameObject roulette;   //RoulettePrefab
+    public GameObject roulette;   //RoulettePrefab
     Text resultText; // resultText
     Text descriptionText;  //description
     GameManager gameManager;
@@ -111,7 +111,10 @@ public class CarMovement : MonoBehaviourPunCallbacks
             resultText.text = (dice-i-1).ToString();
         }
         OnMoveEnd();    //移動し終わった
-        roulette.SetActive(true);
+        if(currentCourse.transform.GetChild(currentNum).GetComponent<Tile>().tileInfo.isMoveToNextCourseTile == false){
+            //Enterで移動する場合はルーレットを表示しない
+            roulette.SetActive(true);
+        }
     }
 
     void OnMoveEnd(){
