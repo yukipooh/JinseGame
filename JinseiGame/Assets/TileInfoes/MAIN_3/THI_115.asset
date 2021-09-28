@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134def2eba15ce2479e7e825efc273f5, type: 3}
   m_Name: THI_115
   m_EditorClassIdentifier: 
-  tileType: 1
-  description: "2000$\u5931\u3046\u3002"
+  tileType: 5
+  description: "\u5B50\u4F9B\u304C\u751F\u307E\u308C\u305F\uFF01\u7537\u306E\u5B50\u3060\uFF01\n"
   money_delta: -2000
   job: 0
   treasure: 0

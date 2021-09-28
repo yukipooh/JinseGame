@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HEAVEN_001
   m_EditorClassIdentifier: 
   tileType: 1
-  description: "5000$\u3082\u3089\u3046\uFF01"
+  description: "\u91D1\u904B\u304C\u5F37\u70C8\u306B\u30A2\u30C3\u30D7\uFF015000$\u3082\u3089\u3046\u3002"
   money_delta: 5000
   job: 0
   treasure: 0
