@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 180312043}
     m_Modifications:
+    - target: {fileID: 4875122808473768734, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7750350051402051582, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
       propertyPath: m_Name
       value: PlayerContent
@@ -230,6 +234,10 @@ PrefabInstance:
     - target: {fileID: 156644507197538859, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
       propertyPath: sceneViewId
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875122808473768734, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
+      propertyPath: sceneViewId
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7750350051402051582, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
       propertyPath: m_Name
@@ -600,6 +608,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4875122808473768734, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
+      propertyPath: sceneViewId
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7750350051402051582, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
       propertyPath: m_Name
       value: PlayerContent (5)
@@ -698,6 +710,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 180312043}
     m_Modifications:
     - target: {fileID: 156644507197538859, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875122808473768734, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
       propertyPath: sceneViewId
       value: 5
       objectReference: {fileID: 0}
@@ -1084,6 +1100,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4875122808473768734, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
+      propertyPath: sceneViewId
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7750350051402051582, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
       propertyPath: m_Name
       value: PlayerContent (4)
@@ -1269,6 +1289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622571f17fcc2164ea8f5b34c52c6990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startGameButton: {fileID: 1869837205}
 --- !u!114 &1569964750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,6 +1322,10 @@ PrefabInstance:
     - target: {fileID: 156644507197538859, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
       propertyPath: sceneViewId
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875122808473768734, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
+      propertyPath: sceneViewId
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7750350051402051582, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
       propertyPath: m_Name
@@ -1474,19 +1499,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1869837206}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1569964749}
-        m_TargetAssemblyTypeName: LobbyScene, Assembly-CSharp
-        m_MethodName: MoveToGameScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1869837206
 MonoBehaviour:
   m_ObjectHideFlags: 0

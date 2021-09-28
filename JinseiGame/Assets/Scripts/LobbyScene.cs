@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class LobbyScene : MonoBehaviourPunCallbacks
 {
     const int MAX_PLAYER = 6;   //ルームの最大人数
+    [SerializeField] Button startGameButton;
 
 
     // Start is called before the first frame update
@@ -17,6 +18,8 @@ public class LobbyScene : MonoBehaviourPunCallbacks
         // PhotonServerSettingsの設定内容を使ってマスターサーバーへ接続する
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.AutomaticallySyncScene = true;    //マスターに合わせてシーン遷移するように
+    
+        startGameButton.onClick.AddListener(() => MoveToGameScene());
     }
 
     // マスターサーバーへの接続が成功した時に呼ばれるコールバック
@@ -32,6 +35,15 @@ public class LobbyScene : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("ゲームサーバーへ接続");
+        if(!PhotonNetwork.IsMasterClient){
+            //マスタークライアントじゃない人はスタートボタンを非表示に
+            startGameButton.gameObject.SetActive(false);
+        }else{
+            // int count = 0;
+            // foreach(Player player in PhotonNetwork.PlayerList){
+            //     if(transform.)
+            // }
+        }
         // PhotonNetwork.NickName = TitleUI.playerName;
         int count = 0;
         foreach(Player player in PhotonNetwork.PlayerList){
@@ -47,6 +59,12 @@ public class LobbyScene : MonoBehaviourPunCallbacks
 
     public override void OnPlayerLeftRoom(Player leftPlayer){
         ClearAllContent();  //すべてのコンテントを初期化
+        if(!PhotonNetwork.IsMasterClient){
+            //マスタークライアントじゃない人はスタートボタンを非表示に
+            startGameButton.gameObject.SetActive(false);
+        }else{
+            startGameButton.gameObject.SetActive(true);
+        }
         int count = 0;
         foreach(Player player in PhotonNetwork.PlayerList){
             if(player != leftPlayer){
@@ -60,7 +78,11 @@ public class LobbyScene : MonoBehaviourPunCallbacks
     
     public void MoveToGameScene(){
         PhotonNetwork.IsMessageQueueRunning = false;
-        SceneManager.LoadScene("SampleScene");
+        if(isAllReady()){
+            SceneManager.LoadScene("SampleScene");
+        }else{
+            Debug.Log("全員が準備完了である必要があります。");
+        }
     }
 
     // Update is called once per frame
@@ -71,9 +93,15 @@ public class LobbyScene : MonoBehaviourPunCallbacks
 
     void SetContent(Player player, int index){
         GameObject playerContent = transform.GetChild(0).GetChild(index).gameObject;
+        if(player.IsMasterClient){
+            playerContent.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+        }else{
+            playerContent.transform.GetChild(0).GetChild(3).gameObject.SetActive(false);
+        }
         playerContent.transform.GetChild(1).gameObject.SetActive(false);    //NonPlayerPanelを非表示に
         playerContent.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);    //NonPlayerPanelを非表示に
         playerContent.GetComponent<PlayerContent>().SetPlayerInfo(player);
+        playerContent.transform.GetChild(0).GetChild(2).GetComponent<SyncCheckBox>().SetInteractable();
     }
 
     void ClearAllContent(){
@@ -81,6 +109,17 @@ public class LobbyScene : MonoBehaviourPunCallbacks
             GameObject playerContent = transform.GetChild(0).GetChild(i).gameObject;
             playerContent.transform.GetChild(1).gameObject.SetActive(true);    //NonPlayerPanelを非表示に
             playerContent.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);    //NonPlayerPanelを非表示に
+
+            playerContent.transform.GetChild(0).GetChild(2).GetComponent<Toggle>().isOn = false;    //全部チェック外す
+            PhotonNetwork.RemoveBufferedRPCs(playerContent.transform.GetChild(0).GetChild(2).GetComponent<SyncCheckBox>().photonView.ViewID);
         }
+    }
+
+    bool isAllReady(){
+        for(int i = 0; i < PhotonNetwork.PlayerList.Length; i++){
+            PlayerContent playerContent = transform.GetChild(0).GetChild(i).GetComponent<PlayerContent>();
+            if(!playerContent._isReady) return false;
+        }
+        return true;
     }
 }
