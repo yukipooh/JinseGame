@@ -46,8 +46,17 @@ public class EnumDefinitions
     public enum Treasure{
         TELESCOPE,
         ROBOT,
-        KUWAGATA,
         FOSSIL,
+        DIAMOND,
+        FIGURE,
+        WATCH,
+        PAINTING,
+        RING,
+        GAME_MACHINE,
+        PIANO,
+        TABLET,
+        SMARTPHONE,
+        PROJECTOR,
     }
 
     public enum Insurance{
