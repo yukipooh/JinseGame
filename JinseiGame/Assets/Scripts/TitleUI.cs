@@ -10,7 +10,7 @@ public class TitleUI : MonoBehaviour
 {
     [SerializeField] Text inputText;
     [SerializeField] Button enterButton;    //決定ボタン
-    public static string playerName = "Tanaka";
+    public static string playerName = "player";
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class TitleUI : MonoBehaviour
     void Enter(){
         if(inputText.text != ""){
             playerName = inputText.text;
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Lobby");
         }
     }
 }

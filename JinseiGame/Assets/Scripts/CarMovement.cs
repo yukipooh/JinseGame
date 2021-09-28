@@ -125,6 +125,11 @@ public class CarMovement : MonoBehaviourPunCallbacks
         gameManager.SetCurrentMoneyText(playerData.currentMoney);
     }
 
+    [PunRPC]
+    void TurnEnd(){
+        
+    }
+
     void Update() {
         
     }

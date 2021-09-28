@@ -1143,6 +1143,7 @@ MonoBehaviour:
   wayMaterialChanger: {fileID: 7159200186214591895}
   rouletteMaker: {fileID: 343944130}
   constData: {fileID: 1788396442}
+  sampleScene: {fileID: 288222457}
   playerNameText: {fileID: 323781397}
   currentMoneyText: {fileID: 261180377}
   m_femalePin: {fileID: 162570289034881620, guid: 43f852fc927e5b34582ad14d8f8cc48a, type: 3}

@@ -44,6 +44,7 @@ public class Tile : MonoBehaviourPunCallbacks
                     pin.transform.parent = playerData.transform.GetChild(0).GetChild(0);
                     pin.transform.localPosition = new Vector3(-0.06518836f,0.00303f,0.01046f);
                     pin.transform.localRotation = Quaternion.Euler(0,0,-135);
+                    pin.transform.localScale = new Vector3(0.03826779f,0.03826779f,0.2870085f);
 
                 }
                 break;

@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPunCallbacks
 {
     public GameObject startTile;
     public GameObject goalTile;
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] WayMaterialChanger wayMaterialChanger;
     [SerializeField] RouletteMaker rouletteMaker;
     [SerializeField] ConstData constData;
+    [SerializeField] SampleScene sampleScene;
     [SerializeField] Text playerNameText;
     [SerializeField] Text currentMoneyText;
     [SerializeField] GameObject m_femalePin;
@@ -28,7 +31,7 @@ public class GameManager : MonoBehaviour
         rouletteMaker.Initialize();
         wayMaterialChanger.Initialize();
         this.Initialize();
-        
+        sampleScene.Initialize();
     }
 
     void Initialize(){
