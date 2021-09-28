@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134def2eba15ce2479e7e825efc273f5, type: 3}
   m_Name: HELL_007
   m_EditorClassIdentifier: 
-  tileType: 1
-  description: "25000$\u3082\u3089\u3046\uFF01"
-  money_delta: 25000
+  tileType: 6
+  description: "\u7F8E\u5473\u3057\u3044\u30E9\u30FC\u30E1\u30F3\u77E2\u3092\u898B\u3064\u3051\u305F\uFF0112000$\u3082\u3089\u3046\u3002"
+  money_delta: 12000
   job: 0
   treasure: 0
   insurance: 0
