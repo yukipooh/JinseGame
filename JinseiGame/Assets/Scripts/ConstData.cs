@@ -20,6 +20,7 @@ public class ConstData : MonoBehaviour
     public static Dictionary<EnumDefinitions.Course, GameObject> Courses = new Dictionary<EnumDefinitions.Course, GameObject>();
     public static Dictionary<int, int> CourseLink = new Dictionary<int, int>(); //<コース前、コース後>
     public static Dictionary<EnumDefinitions.Job, int> Salaries = new Dictionary<EnumDefinitions.Job, int>();   //職業の給料
+    public static Dictionary<EnumDefinitions.Treasure,int> TreasureValues = new Dictionary<EnumDefinitions.Treasure, int>(); // お宝の価値
 
     public void Initialize(){
 //Dictionaryにデータの追加
@@ -64,5 +65,19 @@ public class ConstData : MonoBehaviour
         Salaries.Add(EnumDefinitions.Job.SALARYMAN_MASTER, 50000);
         Salaries.Add(EnumDefinitions.Job.TOP_GAMBLER, 15000);
         Salaries.Add(EnumDefinitions.Job.OIL_MASTER, 100000);
+
+        TreasureValues.Add(EnumDefinitions.Treasure.TELESCOPE,40000);
+        TreasureValues.Add(EnumDefinitions.Treasure.ROBOT,48000);
+        TreasureValues.Add(EnumDefinitions.Treasure.FOSSIL,95000);
+        TreasureValues.Add(EnumDefinitions.Treasure.DIAMOND,120000);
+        TreasureValues.Add(EnumDefinitions.Treasure.FIGURE,60000);
+        TreasureValues.Add(EnumDefinitions.Treasure.WATCH,80000);
+        TreasureValues.Add(EnumDefinitions.Treasure.PAINTING,85000);
+        TreasureValues.Add(EnumDefinitions.Treasure.RING,72000);
+        TreasureValues.Add(EnumDefinitions.Treasure.GAME_MACHINE,50000);
+        TreasureValues.Add(EnumDefinitions.Treasure.PIANO,90000);
+        TreasureValues.Add(EnumDefinitions.Treasure.TABLET,45000);
+        TreasureValues.Add(EnumDefinitions.Treasure.SMARTPHONE,64000);
+        TreasureValues.Add(EnumDefinitions.Treasure.PROJECTOR,50000);
     }
 }
