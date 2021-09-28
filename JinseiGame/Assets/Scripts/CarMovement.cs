@@ -14,6 +14,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
     Text resultText; // resultText
     Text descriptionText;  //description
     GameManager gameManager;
+    TurnManager turnManager;
     PlayerData playerData;
     NavMeshAgent navMeshAgent;
     
@@ -40,6 +41,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
         rigidbody = GetComponent<Rigidbody>();
         playerData = GetComponent<PlayerData>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        turnManager = GameObject.Find("TurnManager").GetComponent<TurnManager>();
         roulette = GameObject.Find("Roulette_Components");
         resultText = GameObject.Find("ResultText").GetComponent<Text>();
         descriptionText = GameObject.Find("descriptionText").GetComponent<Text>();
@@ -114,6 +116,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
         if(currentCourse.transform.GetChild(currentNum).GetComponent<Tile>().tileInfo.isMoveToNextCourseTile == false){
             //Enterで移動する場合はルーレットを表示しない
             roulette.SetActive(true);
+            photonView.RPC("TurnEnd", RpcTarget.All);
         }
     }
 
@@ -127,7 +130,8 @@ public class CarMovement : MonoBehaviourPunCallbacks
 
     [PunRPC]
     void TurnEnd(){
-        
+        turnManager.MoveToNextTurn();
+        Debug.Log(turnManager.GetCurrentTurnPlayer().NickName);
     }
 
     void Update() {

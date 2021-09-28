@@ -19,6 +19,7 @@ public class RouletteController : MonoBehaviourPunCallbacks {
     private int frameCount;
     private bool isPlaying;
     private bool isStop;
+    public bool isMove = true; //移動するときにルーレットを使っているのかどうか
     [SerializeField] public Text resultText;
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
@@ -48,7 +49,7 @@ public class RouletteController : MonoBehaviourPunCallbacks {
         }
         if (rouletteSpeed < 0.05f) {
             isPlaying = false;
-            ShowResult (roulette.transform.eulerAngles.z);
+            ShowResult (roulette.transform.eulerAngles.z, isMove);
         }
     }
 
@@ -66,32 +67,35 @@ public class RouletteController : MonoBehaviourPunCallbacks {
         stopButton.gameObject.SetActive (false);
     }
 
-    private void RetryOnClick(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
     private void ShowStopButton () {
         stopButton.gameObject.SetActive (true);
     }
 
-    private void ShowResult (float x) {
+    private void ShowResult (float x, bool isMove) {
+        resultText.text = GetResult(x).ToString();
+        // retryButton.gameObject.SetActive(true);
+        resultText.gameObject.SetActive(true);
+
+        isStop = false; //ルーレットを再利用できるように
+        startButton.gameObject.SetActive(true); //ルーレットを再利用できるように
+
+        if(isMove){
+            Invoke (nameof(Move), 0.5f);
+        }
+        
+    }
+
+    public int GetResult(float x){
         for (int i = 1; i <= rMaker.choices.Count; i++) {
             if (((rotatePerRoulette * (i - 1) <= x) && x <= (rotatePerRoulette * i)) ||
                 (-(360 - ((i - 1) * rotatePerRoulette)) >= x && x >= -(360 - (i * rotatePerRoulette)))) {
                 result = rMaker.choices[i - 1];
             }
         }
-        resultText.text = result;
-        // retryButton.gameObject.SetActive(true);
-        resultText.gameObject.SetActive(true);
-        Invoke (nameof(Move), 0.5f);
-        
-        
+        return int.Parse(result);
     }
 
     void Move(){
-        isStop = false; //ルーレットを再利用できるように
-        startButton.gameObject.SetActive(true); //ルーレットを再利用できるように
         this.transform.parent.gameObject.SetActive(false);  //ルーレットを非表示
 
         foreach(PhotonView photonView in PhotonNetwork.PhotonViewCollection){

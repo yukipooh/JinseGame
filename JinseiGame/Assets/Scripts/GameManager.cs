@@ -14,29 +14,37 @@ public class GameManager : MonoBehaviourPunCallbacks
     public static GameObject femalePin;
     public static GameObject childPin;
 
+    public List<Player> players;    //ターンに使う
+
     [SerializeField] WayMaterialChanger wayMaterialChanger;
-    [SerializeField] RouletteMaker rouletteMaker;
+    [SerializeField] RouletteMaker[] rouletteMakers;
     [SerializeField] ConstData constData;
     [SerializeField] SampleScene sampleScene;
     [SerializeField] Text playerNameText;
     [SerializeField] Text currentMoneyText;
     [SerializeField] GameObject m_femalePin;
     [SerializeField] GameObject m_childPin;
+    [SerializeField] TurnManager turnManager;
 
+    
 
     //順番大事よ
     void Start() {
-        
         constData.Initialize();
-        rouletteMaker.Initialize();
+        foreach(RouletteMaker rouletteMaker in rouletteMakers){
+            rouletteMaker.Initialize();
+        }
         wayMaterialChanger.Initialize();
         this.Initialize();
         sampleScene.Initialize();
+        turnManager.Initialize(players);
     }
 
     void Initialize(){
         femalePin = m_femalePin;
         childPin = m_childPin;
+
+        players = new List<Player>(PhotonNetwork.PlayerList);
     }
 
     public void SetPlayerNameText(string name){

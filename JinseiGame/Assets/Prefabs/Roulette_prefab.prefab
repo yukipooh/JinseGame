@@ -34,7 +34,7 @@ Transform:
   - {fileID: 5869271205852031208}
   - {fileID: 5869271206311431852}
   m_Father: {fileID: 5869271205409435709}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5869271205409435708
 GameObject:
@@ -59,12 +59,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5869271205409435708}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -60.315796, y: -48.961548, z: 211.14128}
-  m_LocalScale: {x: 0.9184845, y: 0.9184845, z: 0.9184845}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
-  - {fileID: 5869271205702687227}
   - {fileID: 9031551638066349178}
+  - {fileID: 5869271205702687227}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -119,10 +119,11 @@ MonoBehaviour:
   roulette: {fileID: 0}
   rotatePerRoulette: 0
   rMaker: {fileID: 0}
-  carMovement: {fileID: 0}
+  isMove: 1
   resultText: {fileID: 5869271205702687229}
   startButton: {fileID: 5869271207199127794}
   stopButton: {fileID: 5869271205852031213}
+  gameManager: {fileID: 0}
 --- !u!1 &5869271205702687228
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +135,7 @@ GameObject:
   - component: {fileID: 5869271205702687227}
   - component: {fileID: 5869271205702687226}
   - component: {fileID: 5869271205702687229}
+  - component: {fileID: 599831503}
   m_Layer: 5
   m_Name: ResultText
   m_TagString: Untagged
@@ -153,11 +155,11 @@ RectTransform:
   m_LocalScale: {x: 0.21775, y: 0.21775, z: 0.21775}
   m_Children: []
   m_Father: {fileID: 5869271205409435709}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 390.11633, y: -167.70937}
+  m_AnchoredPosition: {x: 208, y: -234}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5869271205702687226
@@ -190,7 +192,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 248
+    m_FontSize: 240
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -198,10 +200,25 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &599831503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5869271205702687228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &5869271205852031212
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,8 +504,8 @@ MonoBehaviour:
   - {r: 0, g: 0.7837882, b: 1, a: 1}
   - {r: 0, g: 1, b: 0.6912031, a: 1}
   - {r: 0, g: 1, b: 0.25349808, a: 1}
-  - {r: 0, g: 1, b: 0.07320976, a: 1}
-  - {r: 0.078704715, g: 1, b: 0, a: 1}
+  - {r: 0.35790148, g: 0.5188679, b: 0, a: 1}
+  - {r: 1, g: 0.8504852, b: 0, a: 1}
   rouletteImage: {fileID: 6415994146427448167, guid: 07a11d861bd08a248b5f4e0c862d2851, type: 3}
   rController: {fileID: 5869271205660520840}
 --- !u!1 &5869271207199127797
