@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: THI_092
   m_EditorClassIdentifier: 
   tileType: 3
-  description: 
+  description: "\u719F\u7DF4\u306E\u904B\u52D5\u30BB\u30F3\u30B9\u3092\u6B21\u306B\u6D3B\u304B\u305D\u3046\uFF01\n\u8077\u696D:\u30A2\u30B9\u30EA\u30FC\u30C8\u304B\u3089\u300E\u30AA\u30EA\u30F3\u30D4\u30A2\u300F\u306B\u9032\u5316\u3057\u305F\u3002"
   money_delta: 0
   job: 0
   treasure: 0

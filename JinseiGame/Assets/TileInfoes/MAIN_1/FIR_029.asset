@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: FIR_029
   m_EditorClassIdentifier: 
   tileType: 1
-  description: "10000$\u5931\u3046\u3002"
-  money_delta: -10000
+  description: "\u521D\u4EFB\u7D66\u3092\u4F7F\u3063\u30665000$\u3067\u6642\u8A08\u3092\u8CB7\u3063\u305F\uFF01\n\u304A\u5B9D:\u30ED\u30EB\u30C3\u30AF\u30B9\u306E\u6642\u8A08
+    \u3092\u624B\u306B\u5165\u308C\u305F"
+  money_delta: -5000
   job: 0
   treasure: 0
   insurance: 0
   isRed: 0
-  isMustStop: 0
+  isMustStop: 1
   isSalaryTile: 0
   isMoveToNextCourseTile: 0
