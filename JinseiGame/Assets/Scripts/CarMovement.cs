@@ -93,7 +93,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
                 if(i != dice - 1){
                     //赤マスにちょうど止まらないとき
                     currentTile.Stopped(ref playerData);    //通り過ぎたマスの効果を発揮
-                    gameManager.SetCurrentMoneyText(playerData.currentMoney);
+                    // gameManager.SetCurrentMoneyText(playerData.currentMoney);
                 }
                 isStopping = true;  //ブランチを選ぶタイミングでfalseに変える
                 if(currentTile.tileInfo.tileType == EnumDefinitions.TileType.BRANCH){
@@ -128,7 +128,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
         currentCourse.transform.GetChild(currentNum).GetComponent<Tile>().Stopped(ref playerData);
         resultText.gameObject.SetActive(false);
         descriptionText.transform.parent.gameObject.SetActive(true);
-        gameManager.SetCurrentMoneyText(playerData.currentMoney);
+        // gameManager.SetCurrentMoneyText(playerData.currentMoney);
     }
 
     [PunRPC]

@@ -27,12 +27,15 @@ public class Tile : MonoBehaviourPunCallbacks
                 if((playerData.currentMoney + tileInfo.money_delta) < 0){
                     playerData.debt += -1 * (playerData.currentMoney + tileInfo.money_delta);
                     playerData.currentMoney = 0;
+
+                    
                     break;
                 }
                 playerData.currentMoney += tileInfo.money_delta;
                 break;
             case EnumDefinitions.TileType.EMPLOY:
                 playerData.job = tileInfo.job;
+                
                 if(tileInfo.isMoveToNextCourseTile){
                     StartCoroutine(MoveToNextCourseTile(stoppingCarMovement));
                 }
@@ -43,7 +46,6 @@ public class Tile : MonoBehaviourPunCallbacks
                 if(playerData.familyNum == 1){
                     playerData.familyNum++; //配偶者を追加
                     stoppingCarMovement.ShowPin(true, false);
-                      
                 }
                 break;
             case EnumDefinitions.TileType.BIRTH:
@@ -95,6 +97,17 @@ public class Tile : MonoBehaviourPunCallbacks
             descriptionText.text += (ConstData.Salaries[playerData.job].ToString() + "$だ！");
         }
         
+        var hashtable_player = new ExitGames.Client.Photon.Hashtable();   
+        hashtable_player["currentMoney"] = playerData.currentMoney;
+        hashtable_player["debt"] = playerData.debt;
+        hashtable_player["job"] = ConstData.jobName[(int)playerData.job];
+        hashtable_player["familyNum"] = playerData.familyNum;
+        PhotonNetwork.LocalPlayer.SetCustomProperties(hashtable_player);
+
+        var hashtable_room = new ExitGames.Client.Photon.Hashtable();
+        hashtable_room["description"] = descriptionText.text;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable_room);
+
     }
 
     //このコルーチン　isRedのマスに適用するとDiceが重複してバグるから注意

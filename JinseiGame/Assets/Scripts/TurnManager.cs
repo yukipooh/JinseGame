@@ -13,6 +13,7 @@ public class TurnManager : MonoBehaviourPunCallbacks
     [SerializeField] UIManager uIManager;
 
     public int currentTurnIndex = 0;  //現在のターンのプレイヤーのindex (_playerTurnOrderの)
+    public static bool isFirstTurn = true; //プレイヤーにとって一番最初のターンかどうかのフラグ
 
     public void Initialize(List<Player> players){
         _players = players;
@@ -32,12 +33,21 @@ public class TurnManager : MonoBehaviourPunCallbacks
     }
 
     public void FirstTurn(){
+        var hashtable_room = new ExitGames.Client.Photon.Hashtable();
+        hashtable_room["turn"] = GetCurrentTurnPlayer().NickName;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable_room);
+
         //自分のターンだったら
         if(PhotonNetwork.LocalPlayer == _playerTurnOrder[currentTurnIndex]){
             uIManager.ShowAllDefaultUI();
+            uIManager.ShowCourseSelectPanel();
+            isFirstTurn = false;
         }else{
             uIManager.DismissAllDefaultUI(true,true,true,false);
+            uIManager.DismissCourseSelectPanel();
         }
+
+        
     }
 
     public void MoveToNextTurn(){
@@ -46,9 +56,17 @@ public class TurnManager : MonoBehaviourPunCallbacks
             currentTurnIndex = 0;
         }
 
+        var hashtable_room = new ExitGames.Client.Photon.Hashtable();
+        hashtable_room["turn"] = GetCurrentTurnPlayer().NickName;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable_room);
+
         //自分のターンだったら
         if(PhotonNetwork.LocalPlayer == _playerTurnOrder[currentTurnIndex]){
             uIManager.ShowAllDefaultUI();
+            if(isFirstTurn){
+                uIManager.ShowCourseSelectPanel();
+                isFirstTurn = false;
+            }
         }else{
             uIManager.DismissAllDefaultUI(true,true,true,false);
         }

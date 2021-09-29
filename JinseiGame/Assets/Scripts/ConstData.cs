@@ -17,6 +17,28 @@ public class ConstData : MonoBehaviour
     [SerializeField] GameObject mainThird;
     // [Header("----------------------")]
 
+    public static string[] jobName = {
+        "フリーター",
+        "コック",
+        "デザイナー",
+        "アスリート",
+        "エンジニア",
+        "弁護士",
+        "医者",
+        "ビジネスマン",
+        "ギャンブラー",
+        "石油取引人",
+        "コック長",
+        "トップデザイナー",
+        "トップアスリート",
+        "フルスタックエンジニア",
+        "カリスマ弁護士",
+        "病院長",
+        "部長",
+        "凄腕ギャンブラー",
+        "石油王",
+    };
+
     public static Dictionary<EnumDefinitions.Course, GameObject> Courses = new Dictionary<EnumDefinitions.Course, GameObject>();
     public static Dictionary<int, int> CourseLink = new Dictionary<int, int>(); //<コース前、コース後>
     public static Dictionary<EnumDefinitions.Job, int> Salaries = new Dictionary<EnumDefinitions.Job, int>();   //職業の給料

@@ -20,7 +20,7 @@ public class CourseSelect : MonoBehaviour
     EnumDefinitions.Course[] courseLinkOriginCourses = {EnumDefinitions.Course.START,EnumDefinitions.Course.MAIN_FIRST,EnumDefinitions.Course.MAIN_SECOND};
     void Start() {
         ShowPanel(0);
-        
+        courseSelectPanel.SetActive(false);
     }
     /// <param name="index">何番目の分岐か(0番目 = ビジネスor専門)</param>
     public void ShowPanel(int index){

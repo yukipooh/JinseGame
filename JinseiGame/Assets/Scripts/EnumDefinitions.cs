@@ -36,7 +36,7 @@ public class EnumDefinitions
         TOP_ATHLETE,    //トップアスリート
         FULL_STACK_ENGINEER,    //フルスタックエンジニア
         TOP_LAWYER, //カリスマ弁護士
-        DOCTER_MASTER,  //院長
+        DOCTER_MASTER,  //病院長
         SALARYMAN_MASTER,   //部長
         TOP_GAMBLER,    //凄腕ギャンブラー
         OIL_MASTER, //石油王
