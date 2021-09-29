@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     public GameObject startTile;
     public GameObject goalTile;
+    public GameObject resultTextForMove;
+    public GameObject resultTextForDecide;
     public static Dictionary<int, GameObject> carObjects = new Dictionary<int, GameObject>();
     public static List<CarMovement> carMovements = new List<CarMovement>();
     public static GameObject femalePin;

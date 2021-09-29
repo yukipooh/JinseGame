@@ -11,6 +11,9 @@ using Photon.Realtime;
 public class CarMovement : MonoBehaviourPunCallbacks
 {
     public GameObject roulette;   //RoulettePrefab
+    public GameObject femalePin;
+    public GameObject[] childPins;
+
     Text resultText; // resultText
     Text descriptionText;  //description
     GameManager gameManager;
@@ -43,7 +46,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         turnManager = GameObject.Find("TurnManager").GetComponent<TurnManager>();
         roulette = GameObject.Find("Roulette_Components");
-        resultText = GameObject.Find("ResultText").GetComponent<Text>();
+        resultText = gameManager.resultTextForMove.GetComponent<Text>();
         descriptionText = GameObject.Find("descriptionText").GetComponent<Text>();
 
         currentCourse = ConstData.Courses[EnumDefinitions.Course.START];
@@ -132,6 +135,20 @@ public class CarMovement : MonoBehaviourPunCallbacks
     void TurnEnd(){
         turnManager.MoveToNextTurn();
         Debug.Log(turnManager.GetCurrentTurnPlayer().NickName);
+    }
+
+    [PunRPC]
+    void RPC_ShowPin(bool femalePin, bool childPin, int index = 0){
+        if(femalePin){
+            this.femalePin.SetActive(true);
+        }
+        if(childPin){
+            this.childPins[index].SetActive(true);
+        }
+    }
+
+    public void ShowPin(bool femalePin, bool childPin, int index = 0){
+        photonView.RPC(nameof(RPC_ShowPin), RpcTarget.All, femalePin, childPin, index);
     }
 
     void Update() {

@@ -42,6 +42,8 @@ MonoBehaviour:
   - TurnEnd
   - SetContent
   - Sync
+  - ShowPin
+  - RPC_ShowPin
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
