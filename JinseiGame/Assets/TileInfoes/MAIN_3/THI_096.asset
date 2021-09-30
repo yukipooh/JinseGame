@@ -15,7 +15,7 @@ MonoBehaviour:
   tileType: 3
   description: "\u4E0B\u7A4D\u307F\u7D4C\u9A13\u304C\u751F\u304D\u305F\u8A3C\u62E0\u3060\uFF01\n\u8077\u696D:\u30B5\u30E9\u30EA\u30FC\u30DE\u30F3\u304B\u3089\u300E\u672C\u90E8\u9577\u300F\u306B\u9032\u5316\uFF01"
   money_delta: 0
-  job: 0
+  job: 16
   treasure: 0
   insurance: 0
   isRed: 0

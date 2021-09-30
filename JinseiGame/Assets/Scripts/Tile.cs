@@ -41,6 +41,7 @@ public class Tile : MonoBehaviourPunCallbacks
                 }
                 break;
             case EnumDefinitions.TileType.JOB_RANKUP:
+                playerData.job = tileInfo.job;
                 break;
             case EnumDefinitions.TileType.MARRY:
                 if(playerData.familyNum == 1){
@@ -67,6 +68,7 @@ public class Tile : MonoBehaviourPunCallbacks
                 break;
             case EnumDefinitions.TileType.TREASURE:
                 playerData.treasures.Add(tileInfo.treasure);
+                playerData.currentMoney -= tileInfo.money_delta;
                 break;
             case EnumDefinitions.TileType.HOUSING:
                 break;
