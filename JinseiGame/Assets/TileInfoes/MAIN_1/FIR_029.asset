@@ -17,9 +17,9 @@ MonoBehaviour:
     \u3092\u624B\u306B\u5165\u308C\u305F"
   money_delta: -5000
   job: 0
-  treasure: 0
+  treasure: 5
   insurance: 0
   isRed: 0
-  isMustStop: 1
+  isMustStop: 0
   isSalaryTile: 0
   isMoveToNextCourseTile: 0

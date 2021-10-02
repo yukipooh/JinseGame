@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: SEC_062
   m_EditorClassIdentifier: 
   tileType: 5
-  description: "\u5B50\u4F9B\u3092\u3082\u3046\u3051\u308B\u3002\u5973\u306E\u5B50\u3060\uFF017000$\u3082\u3089\u3046\uFF01"
+  description: "\u304A\u3081\u3067\u3068\u3046\uFF01\u5B50\u4F9B\u304C\u7523\u307E\u308C\u305F\u3088\uFF01\u5973\u306E\u5B50\u3060\uFF017000$\u3082\u3089\u3046\uFF01"
   money_delta: 7000
   job: 0
   treasure: 0
   insurance: 0
   isRed: 0
-  isMustStop: 1
+  isMustStop: 0
   isSalaryTile: 0
   isMoveToNextCourseTile: 0
