@@ -335,6 +335,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261180375}
   m_CullTransparentMesh: 1
+--- !u!1 &277342244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5496547972706166825, guid: c684150c751bef34faf8d230e4b9d0f3, type: 3}
+  m_PrefabInstance: {fileID: 1170048115700322752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &279398448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -557,6 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   courseSelectPanel: {fileID: 613446847}
+  decideRoulette: {fileID: 277342244}
   rightCourseButtonText: {fileID: 2033080215}
   leftCourseButtonText: {fileID: 669683818}
   rightCourseButton: {fileID: 645278312}
@@ -4939,11 +4945,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5496547972286130590, guid: c684150c751bef34faf8d230e4b9d0f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -60.315796
+      value: -39
       objectReference: {fileID: 0}
     - target: {fileID: 5496547972286130590, guid: c684150c751bef34faf8d230e4b9d0f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -48.961548
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 5496547972286130590, guid: c684150c751bef34faf8d230e4b9d0f3, type: 3}
       propertyPath: m_LocalPosition.z

@@ -82,7 +82,7 @@ public class Tile : MonoBehaviourPunCallbacks
             case EnumDefinitions.TileType.BRANCH:
                 if(gameObject.name == "0031_branch"){
                     //天国コースと地獄コースへの分岐マス
-                    courseSelect.ShowPanel(1);
+                    courseSelect.ShowRoulette();
                 }
                 if(gameObject.name == "0073_branchB"){
                     courseSelect.ShowPanel(2);

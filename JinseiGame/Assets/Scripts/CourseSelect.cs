@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CourseSelect : MonoBehaviour
 {
     [SerializeField] GameObject courseSelectPanel;
+    [SerializeField] GameObject decideRoulette;
     [SerializeField] Text rightCourseButtonText;
     [SerializeField] Text leftCourseButtonText;
     [SerializeField] Button rightCourseButton;
@@ -31,6 +32,30 @@ public class CourseSelect : MonoBehaviour
         leftCourseButton.onClick.AddListener(() => OnClickLeftCourseButton(index));
     }
 
+    public void ShowRoulette(){
+        decideRoulette.transform.parent.parent.gameObject.SetActive(true);
+        StartCoroutine(nameof(WaitRouletteStop));
+        
+    }
+
+    IEnumerator WaitRouletteStop(){
+        RouletteController rouletteController = decideRoulette.GetComponent<RouletteController>();
+        while(!rouletteController.isRouletteStopped){
+            yield return null;
+        }
+        rouletteController.isRouletteStopped = false;
+        OnRouletteFinallyStopped(rouletteController.GetResult());
+        Debug.Log(rouletteController.GetResult().ToString());
+    }
+
+    void OnRouletteFinallyStopped(int result){
+        if((result % 2) == 0){
+            OnClickRightCourseButton(1);
+        }else{
+            OnClickLeftCourseButton(1);
+        }
+    }
+
     /// <param name="index">何番目の分岐か(0番目 = ビジネスor専門)</param>
     void OnClickRightCourseButton(int index){
         ConstData.CourseLink[(int)courseLinkOriginCourses[index]] = (int)rightButtonCourses[index];
@@ -40,6 +65,7 @@ public class CourseSelect : MonoBehaviour
             }
         }
         courseSelectPanel.SetActive(false);
+        decideRoulette.transform.parent.parent.gameObject.SetActive(false);
     }
     void OnClickLeftCourseButton(int index){
         ConstData.CourseLink[(int)courseLinkOriginCourses[index]] = (int)leftButtonCourses[index];
@@ -49,5 +75,6 @@ public class CourseSelect : MonoBehaviour
             }
         }
         courseSelectPanel.SetActive(false);
+        decideRoulette.transform.parent.parent.gameObject.SetActive(false);
     }
 }

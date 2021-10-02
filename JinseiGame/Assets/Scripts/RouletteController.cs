@@ -17,8 +17,9 @@ public class RouletteController : MonoBehaviourPunCallbacks {
     private float rouletteSpeed;
     private float slowDownSpeed;
     private int frameCount;
-    private bool isPlaying;
-    private bool isStop;
+    public bool isPlaying;
+    public bool isStop;
+    public bool isRouletteStopped = false;  //ルーレットを回し終わったかどうかのフラグ
     public bool isMove = true; //移動するときにルーレットを使っているのかどうか
     [SerializeField] public Text resultText;
     [SerializeField] private Button startButton;
@@ -30,6 +31,7 @@ public class RouletteController : MonoBehaviourPunCallbacks {
     public void SetRoulette () {
         isPlaying = false;
         isStop = false;
+        isRouletteStopped = false;
         startButton.gameObject.SetActive (true);
         stopButton.gameObject.SetActive (false);
         // retryButton.gameObject.SetActive(false);
@@ -50,6 +52,7 @@ public class RouletteController : MonoBehaviourPunCallbacks {
         if (rouletteSpeed < 0.05f) {
             isPlaying = false;
             ShowResult (roulette.transform.eulerAngles.z, isMove);
+            OnRouletteStopped();
         }
     }
 
@@ -72,7 +75,8 @@ public class RouletteController : MonoBehaviourPunCallbacks {
     }
 
     private void ShowResult (float x, bool isMove) {
-        resultText.text = GetResult(x).ToString();
+        SetResult(x);
+        resultText.text = GetResult().ToString();
         // retryButton.gameObject.SetActive(true);
         resultText.gameObject.SetActive(true);
 
@@ -85,13 +89,20 @@ public class RouletteController : MonoBehaviourPunCallbacks {
         
     }
 
-    public int GetResult(float x){
+    public void OnRouletteStopped(){
+        isRouletteStopped = true;
+    }
+
+    public void SetResult(float x){
         for (int i = 1; i <= rMaker.choices.Count; i++) {
             if (((rotatePerRoulette * (i - 1) <= x) && x <= (rotatePerRoulette * i)) ||
                 (-(360 - ((i - 1) * rotatePerRoulette)) >= x && x >= -(360 - (i * rotatePerRoulette)))) {
                 result = rMaker.choices[i - 1];
             }
         }
+    }
+
+    public int GetResult(){
         return int.Parse(result);
     }
 
