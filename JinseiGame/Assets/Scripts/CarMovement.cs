@@ -94,6 +94,8 @@ public class CarMovement : MonoBehaviourPunCallbacks
                     //赤マスにちょうど止まらないとき
                     currentTile.Stopped(ref playerData);    //通り過ぎたマスの効果を発揮
                     // gameManager.SetCurrentMoneyText(playerData.currentMoney);
+                }else{
+                    break;  //これでちょうど止まった時にブランチ選択の部分でバグらないように
                 }
                 isStopping = true;  //ブランチを選ぶタイミングでfalseに変える
                 if(currentTile.tileInfo.tileType == EnumDefinitions.TileType.BRANCH){

@@ -9302,7 +9302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 3de87260b39ee15449affd7db9dcdca5, type: 2}
+  tileInfo: {fileID: 11400000, guid: 94a83a04ded873e4597a1d8f45cf5434, type: 2}
   descriptionText: {fileID: 857370008}
 --- !u!1 &3953029339463607351
 GameObject:
