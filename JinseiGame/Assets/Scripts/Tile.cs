@@ -78,6 +78,7 @@ public class Tile : MonoBehaviourPunCallbacks
             case EnumDefinitions.TileType.SETTLE:
                 break;
             case EnumDefinitions.TileType.GOAL:
+                playerData.isGoaled = true;
                 break;
             case EnumDefinitions.TileType.BRANCH:
                 if(gameObject.name == "0031_branch"){

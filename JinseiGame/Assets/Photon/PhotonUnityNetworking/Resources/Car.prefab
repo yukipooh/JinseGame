@@ -116,6 +116,7 @@ MonoBehaviour:
   familyNum: 1
   treasures: 
   insurances: 
+  isGoaled: 0
 --- !u!114 &993914868
 MonoBehaviour:
   m_ObjectHideFlags: 0

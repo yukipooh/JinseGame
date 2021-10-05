@@ -62,6 +62,8 @@ public class TurnManager : MonoBehaviourPunCallbacks
 
         //自分のターンだったら
         if(PhotonNetwork.LocalPlayer == _playerTurnOrder[currentTurnIndex]){
+            Debug.Log("ゴール済みのためターンエンド");
+        
             uIManager.ShowAllDefaultUI();
             if(isFirstTurn){
                 uIManager.ShowCourseSelectPanel();
