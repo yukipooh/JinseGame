@@ -11,4 +11,5 @@ public class PlayerData : MonoBehaviour
     public int familyNum = 1;  //家族人数
     public List<EnumDefinitions.Treasure> treasures;   //持ってるお宝
     public List<EnumDefinitions.Insurance> insurances; //入ってる保険
+    public bool isGoaled = false;   //ゴール済みかどうかのフラグ
 }

@@ -119,7 +119,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
         if(currentCourse.transform.GetChild(currentNum).GetComponent<Tile>().tileInfo.isMoveToNextCourseTile == false){
             //Enterで移動する場合はルーレットを表示しない
             roulette.SetActive(true);
-            photonView.RPC("TurnEnd", RpcTarget.All);
+            TurnEnd();
         }
     }
 
@@ -131,8 +131,12 @@ public class CarMovement : MonoBehaviourPunCallbacks
         // gameManager.SetCurrentMoneyText(playerData.currentMoney);
     }
 
+    public void TurnEnd(){
+        photonView.RPC(nameof(RPC_TurnEnd), RpcTarget.All);
+    }
+
     [PunRPC]
-    void TurnEnd(){
+    void RPC_TurnEnd(){
         turnManager.MoveToNextTurn();
         Debug.Log(turnManager.GetCurrentTurnPlayer().NickName);
     }
