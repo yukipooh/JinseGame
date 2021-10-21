@@ -2,6 +2,8 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 // MonoBehaviourPunCallbacksを継承して、PUNのコールバックを受け取れるようにする
 public class SampleScene : MonoBehaviourPunCallbacks
@@ -22,9 +24,25 @@ public class SampleScene : MonoBehaviourPunCallbacks
     public void Initialize(){
         // ランダムな座標に自身のアバター（ネットワークオブジェクト）を生成する
         Vector3 startPos = startTile.transform.position;
-        PhotonNetwork.Instantiate("Car", startPos + new Vector3(PhotonNetwork.CountOfPlayersInRooms,0,0), Quaternion.identity);
+        GameObject carObject = PhotonNetwork.Instantiate("Car", startPos + new Vector3(PhotonNetwork.CountOfPlayersInRooms,0,0), Quaternion.identity);
+        carObject.transform.GetChild(0).GetChild(12).GetComponent<MeshRenderer>().material.color = GetCarColor(PhotonNetwork.LocalPlayer);
+        
+        
         Debug.Log(PhotonNetwork.NickName);
     }
+
+    //プレイヤーに保存されている車のColorを取得する
+    public static Color GetCarColor(Player player){
+        Color color = new Color(
+            (float)player.CustomProperties["carColor_R"],
+            (float)player.CustomProperties["carColor_G"],
+            (float)player.CustomProperties["carColor_B"],
+            (float)player.CustomProperties["carColor_A"]
+        );
+        return color;
+    }
+
+    
 
     // // マスターサーバーへの接続が成功した時に呼ばれるコールバック
     // public override void OnConnectedToMaster() {

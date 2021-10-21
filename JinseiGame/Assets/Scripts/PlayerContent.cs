@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public class PlayerContent : MonoBehaviour
 {
     [SerializeField] Text _playerNameText; 
-    [SerializeField] Toggle toggle; //CheckBox
-
+    [SerializeField] Toggle _toggle; //CheckBox
+    
     public Player _player;
-    public bool _isReady => toggle.isOn;
+    public bool _isReady => _toggle.isOn;
 
     public void SetPlayerInfo(Player player){
         _player = player;
