@@ -13,6 +13,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
     public GameObject roulette;   //RoulettePrefab
     public GameObject femalePin;
     public GameObject[] childPins;
+    CarMovement instance;
 
     Text resultText; // resultText
     Text descriptionText;  //description
@@ -39,6 +40,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
     // }
 
     private void Awake() {
+        instance = this;
         latestPosition = transform.position;    
         navMeshAgent = GetComponent<NavMeshAgent>();
         rigidbody = GetComponent<Rigidbody>();
@@ -53,6 +55,11 @@ public class CarMovement : MonoBehaviourPunCallbacks
         currentCourseEnum = EnumDefinitions.Course.START;
 
         GameManager.carMovements.Add(this);
+        // foreach(CarMovement carMovement in GameManager.carMovements){
+            //この車の色の変更をすべてのプレイヤーで実行
+            this.photonView.RPC(nameof(SyncCarColor), RpcTarget.AllBuffered, SampleScene.GetCarColor(this.photonView.Owner).r,SampleScene.GetCarColor(this.photonView.Owner).g,SampleScene.GetCarColor(this.photonView.Owner).b);
+        // }
+
         photonView.name = PhotonNetwork.NickName;
         gameManager.SetPlayerNameText(PhotonNetwork.NickName);
     }
@@ -151,6 +158,13 @@ public class CarMovement : MonoBehaviourPunCallbacks
         if(childPin){
             this.childPins[index].SetActive(true);
         }
+    }
+
+    [PunRPC]
+    public void SyncCarColor(float R,float G, float B){
+        //車の色を他のプレイヤーにも同期させる
+        Color carColor = new Color(R,G,B);
+        this.gameObject.transform.GetChild(0).GetChild(12).GetComponent<MeshRenderer>().material.color = carColor;
     }
 
     public void ShowPin(bool femalePin, bool childPin, int index = 0){

@@ -5,11 +5,20 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class LobbyScene : MonoBehaviourPunCallbacks
 {
     const int MAX_PLAYER = 6;   //ルームの最大人数
+    Vector3[] colorPickerPositions = {
+        new Vector3(-1,0.3f,-8.7f),
+        new Vector3(),
+        new Vector3(),
+        new Vector3(),
+        new Vector3(),
+    };
     [SerializeField] Button startGameButton;
+    [SerializeField] GameObject[] colorPickers;
 
 
     // Start is called before the first frame update
@@ -79,6 +88,7 @@ public class LobbyScene : MonoBehaviourPunCallbacks
     public void MoveToGameScene(){
         PhotonNetwork.IsMessageQueueRunning = false;
         if(isAllReady()){
+            Debug.Log(PhotonNetwork.LocalPlayer.CustomProperties["carColor_R"]);
             SceneManager.LoadScene("SampleScene");
         }else{
             Debug.Log("全員が準備完了である必要があります。");
@@ -93,22 +103,34 @@ public class LobbyScene : MonoBehaviourPunCallbacks
 
     void SetContent(Player player, int index){
         GameObject playerContent = transform.GetChild(0).GetChild(index).gameObject;
+        
         if(player.IsMasterClient){
+            //スタートボタンを表示
             playerContent.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
         }else{
+            //スタートボタンを非表示に
             playerContent.transform.GetChild(0).GetChild(3).gameObject.SetActive(false);
         }
         playerContent.transform.GetChild(1).gameObject.SetActive(false);    //NonPlayerPanelを非表示に
         playerContent.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);    //NonPlayerPanelを非表示に
+        if(player == PhotonNetwork.LocalPlayer){
+            
+            Debug.Log(colorPickers[index].transform.position);
+            // colorPickers[index].GetComponent<PhotonView>().TransferOwnership(player);  //カラーピッカーのオーナーを設定
+            colorPickers[index].SetActive(true);
+        }
         playerContent.GetComponent<PlayerContent>().SetPlayerInfo(player);
         playerContent.transform.GetChild(0).GetChild(2).GetComponent<SyncCheckBox>().SetInteractable();
     }
+
+    
 
     void ClearAllContent(){
         for(int i = 0; i < MAX_PLAYER; i++){
             GameObject playerContent = transform.GetChild(0).GetChild(i).gameObject;
             playerContent.transform.GetChild(1).gameObject.SetActive(true);    //NonPlayerPanelを非表示に
             playerContent.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);    //NonPlayerPanelを非表示に
+            colorPickers[i].SetActive(false);
 
             playerContent.transform.GetChild(0).GetChild(2).GetComponent<Toggle>().isOn = false;    //全部チェック外す
             PhotonNetwork.RemoveBufferedRPCs(playerContent.transform.GetChild(0).GetChild(2).GetComponent<SyncCheckBox>().photonView.ViewID);

@@ -2391,8 +2391,8 @@ namespace Photon.Pun
                         }
                         else if (PhotonNetwork.LogLevel >= PunLogLevel.ErrorsOnly)
                         {
-                            Debug.LogErrorFormat("Failed to find a PhotonView with ID={0} for incoming OwnershipTransfer event (newOwnerActorNumber={1}), sender={2}",
-                                                 requestedViewId, newOwnerId, actorNr);
+                            // Debug.LogErrorFormat("Failed to find a PhotonView with ID={0} for incoming OwnershipTransfer event (newOwnerActorNumber={1}), sender={2}",
+                                                //  requestedViewId, newOwnerId, actorNr);
                         }
 
                         break;
@@ -2415,7 +2415,7 @@ namespace Photon.Pun
                             Player prevOwner = view.Owner;
                             Player newOwner = CurrentRoom.GetPlayer(newOwnerId, true);
 
-                            view.OwnerActorNr= newOwnerId;
+                            view.OwnerActorNr = newOwnerId;
                             view.ControllerActorNr = newOwnerId;
 
                             reusablePVHashset.Add(view);
