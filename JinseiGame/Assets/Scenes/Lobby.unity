@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: ObservedComponents.Array.data[0]
       value: 
       objectReference: {fileID: 751787416}
+    - target: {fileID: 4765044301291944679, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4875122808473768734, guid: 4e5105e860f9ec6409365777142ac4c9, type: 3}
       propertyPath: sceneViewId
       value: 8
