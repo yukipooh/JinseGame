@@ -22,7 +22,9 @@ public class ChangeCarColor : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        SetColor(colorPickerTriangle.TheColor);
+        if(PhotonNetwork.LocalPlayer == transform.parent.parent.GetComponent<PlayerContent>()._player){
+            SetColor(colorPickerTriangle.TheColor);
+        }
     }
 
     void SetColor(Color color){

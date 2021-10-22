@@ -55,11 +55,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
         currentCourseEnum = EnumDefinitions.Course.START;
 
         GameManager.carMovements.Add(this);
-        // foreach(CarMovement carMovement in GameManager.carMovements){
-            //この車の色の変更をすべてのプレイヤーで実行
-            this.photonView.RPC(nameof(SyncCarColor), RpcTarget.AllBuffered, SampleScene.GetCarColor(this.photonView.Owner).r,SampleScene.GetCarColor(this.photonView.Owner).g,SampleScene.GetCarColor(this.photonView.Owner).b);
-        // }
-
+        
         photonView.name = PhotonNetwork.NickName;
         gameManager.SetPlayerNameText(PhotonNetwork.NickName);
     }

@@ -26,7 +26,7 @@ public class SampleScene : MonoBehaviourPunCallbacks
         Vector3 startPos = startTile.transform.position;
         GameObject carObject = PhotonNetwork.Instantiate("Car", startPos + new Vector3(PhotonNetwork.CountOfPlayersInRooms,0,0), Quaternion.identity);
         carObject.transform.GetChild(0).GetChild(12).GetComponent<MeshRenderer>().material.color = GetCarColor(PhotonNetwork.LocalPlayer);
-        
+        StartCoroutine(nameof(ChangeAllCarColor));
         
         Debug.Log(PhotonNetwork.NickName);
     }
@@ -42,7 +42,17 @@ public class SampleScene : MonoBehaviourPunCallbacks
         return color;
     }
 
-    
+    IEnumerator ChangeAllCarColor(){
+        //全員分のcarMovementが揃うまで処理を待つ
+        while(GameManager.carMovements.Count < PhotonNetwork.PlayerList.Length){
+            yield return null;
+        }
+        foreach(CarMovement carMovement in GameManager.carMovements){
+            //色同期
+            carMovement.gameObject.transform.GetChild(0).GetChild(12).GetComponent<MeshRenderer>().material.color
+             = GetCarColor(carMovement.photonView.Owner);
+        }
+    }
 
     // // マスターサーバーへの接続が成功した時に呼ばれるコールバック
     // public override void OnConnectedToMaster() {
