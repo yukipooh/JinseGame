@@ -70,9 +70,17 @@ public class EnumDefinitions
         MANSION,    //マンション
         APART,  //アパート
         NORMAL, //一軒家
-        CASTLE, //お城
         GOUTEI, //豪邸
+        CASTLE, //お城
         
+    }
+
+    public enum HouseStructure{
+        TEKKIN, //鉄筋コンクリート
+        TEKKOTU,    //鉄骨
+        MOKUZO, //木造
+        
+
     }
 
     public enum Course {

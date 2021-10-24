@@ -19,7 +19,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
     Text descriptionText;  //description
     GameManager gameManager;
     TurnManager turnManager;
-    PlayerData playerData;
+    public PlayerData playerData;
     NavMeshAgent navMeshAgent;
     
     Tween tween;
@@ -124,7 +124,11 @@ public class CarMovement : MonoBehaviourPunCallbacks
         if(currentCourse.transform.GetChild(currentNum).GetComponent<Tile>().tileInfo.isMoveToNextCourseTile == false){
             //Enterで移動する場合はルーレットを表示しない
             roulette.SetActive(true);
-            TurnEnd();
+            Tile currentTile = currentCourse.transform.GetChild(currentNum).GetComponent<Tile>();
+            if(currentTile.tileInfo.tileType != EnumDefinitions.TileType.HOUSING){
+                //HOUSINGマスじゃなかったらここでターンエンド
+                TurnEnd();
+            }
         }
     }
 

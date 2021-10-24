@@ -50,6 +50,7 @@ public class UIManager : MonoBehaviourPunCallbacks
         foreach(var prop in changedProps){
             switch(prop.Key){
                 case "currentMoney":
+                    Debug.Log(prop.Value.ToString());
                     currentMoneyText.text = "所持金：" + prop.Value.ToString() + "$";
                     break;
                 case "debt":
