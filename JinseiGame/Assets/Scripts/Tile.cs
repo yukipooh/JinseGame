@@ -9,8 +9,8 @@ public class Tile : MonoBehaviourPunCallbacks
 {
     public TileInfo tileInfo;
     CourseSelect courseSelect;
+    [SerializeField] GameObject buyHousePanel;
     [SerializeField] Text descriptionText;
-
     CarMovement stoppingCarMovement;
     
     void Start() {
@@ -27,8 +27,6 @@ public class Tile : MonoBehaviourPunCallbacks
                 if((playerData.currentMoney + tileInfo.money_delta) < 0){
                     playerData.debt += -1 * (playerData.currentMoney + tileInfo.money_delta);
                     playerData.currentMoney = 0;
-
-                    
                     break;
                 }
                 playerData.currentMoney += tileInfo.money_delta;
@@ -71,6 +69,7 @@ public class Tile : MonoBehaviourPunCallbacks
                 playerData.currentMoney -= tileInfo.money_delta;
                 break;
             case EnumDefinitions.TileType.HOUSING:
+                buyHousePanel.SetActive(true);
                 break;
             case EnumDefinitions.TileType.INSURANCE:
                 playerData.insurances.Add(tileInfo.insurance);  //保険追加
