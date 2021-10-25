@@ -56,6 +56,7 @@ MonoBehaviour:
   - {fileID: 6838248479432099620}
   - {fileID: 4020615228881372044}
   - {fileID: 4911400736780511417}
+  playerData: {fileID: 0}
   currentCourse: {fileID: 0}
   currentCourseEnum: 0
   isStopping: 0
