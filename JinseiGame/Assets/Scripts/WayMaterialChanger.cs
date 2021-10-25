@@ -8,7 +8,7 @@ public class WayMaterialChanger : MonoBehaviour
 
     List<GameObject> tiles = new List<GameObject>();
     
-    [SerializeField] Material[] materials;
+    public Material[] materials;
     [SerializeField] GameObject map;
     
 
@@ -21,7 +21,7 @@ public class WayMaterialChanger : MonoBehaviour
                 tiles.Add(transform.GetChild(0).GetChild(i).GetChild(j).gameObject);
             }
         }
-        ChangeMaterial();
+        // ChangeMaterial();
 
     }
 
