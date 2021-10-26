@@ -8,6 +8,7 @@ public class ChangeCarColor : MonoBehaviourPunCallbacks
 {
     GameObject carBody;
     MeshRenderer meshRenderer;
+    bool isFirst = true; //初期色を登録するためにフラグを用意
     [SerializeField] ColorPickerTriangle colorPickerTriangle;
 
     
@@ -28,7 +29,8 @@ public class ChangeCarColor : MonoBehaviourPunCallbacks
     }
 
     void SetColor(Color color){
-        if(color != meshRenderer.material.color){
+        if(isFirst || (color != meshRenderer.material.color)){
+            isFirst = false;
             var colorHash = new ExitGames.Client.Photon.Hashtable();
             colorHash["carColor_R"] = color.r;
             colorHash["carColor_G"] = color.g;

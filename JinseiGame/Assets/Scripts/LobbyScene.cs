@@ -10,13 +10,13 @@ using System;
 public class LobbyScene : MonoBehaviourPunCallbacks
 {
     const int MAX_PLAYER = 6;   //ルームの最大人数
-    Vector3[] colorPickerPositions = {
-        new Vector3(-1,0.3f,-8.7f),
-        new Vector3(),
-        new Vector3(),
-        new Vector3(),
-        new Vector3(),
-    };
+    // Vector3[] colorPickerPositions = {
+    //     new Vector3(-1,0.3f,-8.7f),
+    //     new Vector3(),
+    //     new Vector3(),
+    //     new Vector3(),
+    //     new Vector3(),
+    // };
     [SerializeField] Button startGameButton;
     [SerializeField] GameObject[] colorPickers;
 
