@@ -11,6 +11,7 @@ public class Tile : MonoBehaviourPunCallbacks
     CourseSelect courseSelect;
     [SerializeField] GameObject buyHousePanel;
     [SerializeField] Text descriptionText;
+    [SerializeField] GameObject moneyShowerPrefab;
     CarMovement stoppingCarMovement;
     
     void Start() {
@@ -28,6 +29,9 @@ public class Tile : MonoBehaviourPunCallbacks
                     playerData.debt += -1 * (playerData.currentMoney + tileInfo.money_delta);
                     playerData.currentMoney = 0;
                     break;
+                }
+                if(tileInfo.money_delta > 0){
+                    Destroy(Instantiate(moneyShowerPrefab,playerData.gameObject.transform.position + new Vector3(0,10,0),Quaternion.identity),3);
                 }
                 playerData.currentMoney += tileInfo.money_delta;
                 break;
@@ -96,6 +100,7 @@ public class Tile : MonoBehaviourPunCallbacks
 
         if(tileInfo.isSalaryTile){
             playerData.currentMoney += ConstData.Salaries[playerData.job];  //給料追加
+            Destroy(Instantiate(moneyShowerPrefab,playerData.gameObject.transform.position + new Vector3(0,10,0),Quaternion.identity),3);
             descriptionText.text += (ConstData.Salaries[playerData.job].ToString() + "$だ！");
         }
         

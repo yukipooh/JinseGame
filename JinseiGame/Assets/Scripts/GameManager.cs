@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public static List<CarMovement> carMovements = new List<CarMovement>();
     public static GameObject femalePin;
     public static GameObject childPin;
-
+    
     public List<Player> players;    //ターンに使う
 
     [SerializeField] WayMaterialChanger wayMaterialChanger;
