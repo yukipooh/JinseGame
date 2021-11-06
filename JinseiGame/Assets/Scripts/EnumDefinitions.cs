@@ -57,6 +57,7 @@ public class EnumDefinitions
         TABLET,
         SMARTPHONE,
         PROJECTOR,
+        MAIL,   //お祈りメール
     }
 
     public enum Insurance{

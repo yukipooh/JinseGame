@@ -101,5 +101,6 @@ public class ConstData : MonoBehaviour
         TreasureValues.Add(EnumDefinitions.Treasure.TABLET,45000);
         TreasureValues.Add(EnumDefinitions.Treasure.SMARTPHONE,64000);
         TreasureValues.Add(EnumDefinitions.Treasure.PROJECTOR,50000);
+        TreasureValues.Add(EnumDefinitions.Treasure.MAIL,10000);
     }
 }
