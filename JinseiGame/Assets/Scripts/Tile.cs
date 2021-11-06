@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using System;
 
 public class Tile : MonoBehaviourPunCallbacks
 {
@@ -20,6 +21,9 @@ public class Tile : MonoBehaviourPunCallbacks
     
     public void Stopped(ref PlayerData playerData){
         stoppingCarMovement = playerData.gameObject.GetComponent<CarMovement>();    //現在止まっているCarmovementを設定
+        descriptionText.transform.parent.gameObject.SetActive(true);
+        descriptionText.text = tileInfo.description;
+
         switch(tileInfo.tileType){
             case EnumDefinitions.TileType.START:
                 
@@ -52,7 +56,13 @@ public class Tile : MonoBehaviourPunCallbacks
                 }
                 break;
             case EnumDefinitions.TileType.JOB_RANKUP:
-                playerData.job = tileInfo.job;
+                if(((int)tileInfo.job - 9) == (int)playerData.job){
+                    //ランクアップ先が自分の上位互換の職業だったらランクアップ
+                    playerData.job = tileInfo.job;
+                }else{
+                    descriptionText.text = $"「{ConstData.jobName[(int)tileInfo.job]}」にエントリーしていただき誠にありがとうございました。チームで慎重に検討した結果、ご希望に添いかねる形となりました。{playerData.name}様の益々のご活躍をお祈り申し上げます。";
+                    playerData.treasures.Add(EnumDefinitions.Treasure.MAIL);    //お祈りメール追加
+                }
                 break;
             case EnumDefinitions.TileType.MARRY:
                 if(playerData.familyNum == 1){
@@ -104,8 +114,7 @@ public class Tile : MonoBehaviourPunCallbacks
                 break;
         }
 
-        descriptionText.transform.parent.gameObject.SetActive(true);
-        descriptionText.text = tileInfo.description;
+        
 
         if(tileInfo.isSalaryTile){
             playerData.currentMoney += ConstData.Salaries[playerData.job];  //給料追加
