@@ -31,7 +31,16 @@ public class Tile : MonoBehaviourPunCallbacks
                     break;
                 }
                 if(tileInfo.money_delta > 0){
-                    Destroy(Instantiate(moneyShowerPrefab,playerData.gameObject.transform.position + new Vector3(0,10,0),Quaternion.identity),3);
+                    GameObject moneyShower = Instantiate(moneyShowerPrefab,playerData.gameObject.transform.position + new Vector3(-1.9f,10,0.5f),Quaternion.Euler(-90,0,0));
+                    ParticleSystem ps = moneyShower.GetComponent<ParticleSystem>();
+                    ps.Stop();
+                    var main = ps.main;
+                    float duration = tileInfo.money_delta / 10000f;
+                    if(duration < 1) duration = 1;
+                    if(duration > 2) duration = 2;  //値調節
+                    main.duration = duration;
+                    ps.Play();
+                    Destroy(moneyShower,4f);
                 }
                 playerData.currentMoney += tileInfo.money_delta;
                 break;
@@ -100,7 +109,18 @@ public class Tile : MonoBehaviourPunCallbacks
 
         if(tileInfo.isSalaryTile){
             playerData.currentMoney += ConstData.Salaries[playerData.job];  //給料追加
-            Destroy(Instantiate(moneyShowerPrefab,playerData.gameObject.transform.position + new Vector3(0,10,0),Quaternion.identity),3);
+            
+            GameObject moneyShower = Instantiate(moneyShowerPrefab,playerData.gameObject.transform.position + new Vector3(-1.9f,10,0.5f),Quaternion.Euler(-90,0,0));
+            ParticleSystem ps = moneyShower.GetComponent<ParticleSystem>();
+            ps.Stop();
+            var main = ps.main;
+            float duration = ConstData.Salaries[playerData.job] / 10000f;
+            if(duration < 1) duration = 1;
+            if(duration > 2) duration = 2;  //値調節
+            main.duration = duration;
+            ps.Play();
+            Destroy(moneyShower,4f);
+
             descriptionText.text += (ConstData.Salaries[playerData.job].ToString() + "$だ！");
         }
         
@@ -124,4 +144,5 @@ public class Tile : MonoBehaviourPunCallbacks
         }
         carMovement.StartCoroutine(carMovement.Dice(false,transform.parent.childCount - transform.GetSiblingIndex()));
     }
+
 }
