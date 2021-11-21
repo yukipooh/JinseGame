@@ -10,6 +10,7 @@ public class Tile : MonoBehaviourPunCallbacks
 {
     public TileInfo tileInfo;
     CourseSelect courseSelect;
+    RouletteController rouletteController;
     [SerializeField] GameObject buyHousePanel;
     [SerializeField] Text descriptionText;
     [SerializeField] GameObject moneyShowerPrefab;
@@ -17,6 +18,7 @@ public class Tile : MonoBehaviourPunCallbacks
     
     void Start() {
         courseSelect = GameObject.Find("CourseSelect").GetComponent<CourseSelect>();
+        rouletteController = GameObject.Find("Canvas").transform.GetChild(1).GetChild(0).GetChild(2).GetComponent<RouletteController>();
     }
     
     public void Stopped(ref PlayerData playerData){
@@ -117,20 +119,27 @@ public class Tile : MonoBehaviourPunCallbacks
         
 
         if(tileInfo.isSalaryTile){
-            playerData.currentMoney += ConstData.Salaries[playerData.job];  //給料追加
-            
-            GameObject moneyShower = Instantiate(moneyShowerPrefab,playerData.gameObject.transform.position + new Vector3(-1.9f,10,0.5f),Quaternion.Euler(-90,0,0));
-            ParticleSystem ps = moneyShower.GetComponent<ParticleSystem>();
-            ps.Stop();
-            var main = ps.main;
-            float duration = ConstData.Salaries[playerData.job] / 10000f;
-            if(duration < 1) duration = 1;
-            if(duration > 2) duration = 2;  //値調節
-            main.duration = duration;
-            ps.Play();
-            Destroy(moneyShower,4f);
+            if(playerData.job == EnumDefinitions.Job.GAMBLER || playerData.job == EnumDefinitions.Job.TOP_GAMBLER){
+                int baseSalary = ConstData.Salaries[playerData.job];
+                StartCoroutine(nameof(DecideGamblerSalary), baseSalary);
+            }else{
+                int salary = ConstData.Salaries[playerData.job];
+                playerData.currentMoney += salary;  //給料追加
+                
+                GameObject moneyShower = Instantiate(moneyShowerPrefab,playerData.gameObject.transform.position + new Vector3(-1.9f,10,0.5f),Quaternion.Euler(-90,0,0));
+                ParticleSystem ps = moneyShower.GetComponent<ParticleSystem>();
+                ps.Stop();
+                var main = ps.main;
+                float duration = ConstData.Salaries[playerData.job] / 10000f;
+                if(duration < 1) duration = 1;
+                if(duration > 2) duration = 2;  //値調節
+                main.duration = duration;
+                ps.Play();
+                Destroy(moneyShower,4f);
 
-            descriptionText.text += (ConstData.Salaries[playerData.job].ToString() + "$だ！");
+                descriptionText.text += ("$" + salary.ToString() + "だ！");
+
+            }
         }
         
         var hashtable_player = new ExitGames.Client.Photon.Hashtable();   
@@ -154,4 +163,37 @@ public class Tile : MonoBehaviourPunCallbacks
         carMovement.StartCoroutine(carMovement.Dice(false,transform.parent.childCount - transform.GetSiblingIndex()));
     }
 
+    //stringが参照型だから参照わたしみたいなのをコルーチンで表現できる
+    IEnumerator DecideGamblerSalary(int baseSalary){
+        rouletteController.transform.parent.parent.gameObject.SetActive(true);
+        while(!rouletteController.isRouletteStopped){
+            yield return null;
+        }
+        rouletteController.isRouletteStopped = false;
+        rouletteController.transform.parent.parent.gameObject.SetActive(false);
+        int result = RouletteController.GetResult();
+        int salary = baseSalary * result;
+        PlayerData playerData = stoppingCarMovement.GetComponent<PlayerData>();
+        playerData.currentMoney += salary;
+
+        var hashtable_player = new ExitGames.Client.Photon.Hashtable();   
+        hashtable_player["currentMoney"] = playerData.currentMoney;
+        hashtable_player["debt"] = playerData.debt;
+        hashtable_player["job"] = ConstData.jobName[(int)playerData.job];
+        hashtable_player["familyNum"] = playerData.familyNum;
+        PhotonNetwork.LocalPlayer.SetCustomProperties(hashtable_player);
+
+        GameObject moneyShower = Instantiate(moneyShowerPrefab,playerData.gameObject.transform.position + new Vector3(-1.9f,10,0.5f),Quaternion.Euler(-90,0,0));
+        ParticleSystem ps = moneyShower.GetComponent<ParticleSystem>();
+        ps.Stop();
+        var main = ps.main;
+        float duration = salary / 10000f;
+        if(duration < 1) duration = 1;
+        if(duration > 2) duration = 2;  //値調節
+        main.duration = duration;
+        ps.Play();
+        Destroy(moneyShower,4f);
+
+        descriptionText.text += ("$" + salary.ToString() + "だ！");
+    }
 }
