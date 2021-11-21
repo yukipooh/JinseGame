@@ -19,6 +19,7 @@ public class CourseSelect : MonoBehaviour
     string[] rightButtonCourseNames = {"ビジネスコース","天国コース","世界旅行コース"};
     EnumDefinitions.Course[] rightButtonCourses = {EnumDefinitions.Course.BUSINESS,EnumDefinitions.Course.HEAVEN,EnumDefinitions.Course.WORLD};
     EnumDefinitions.Course[] courseLinkOriginCourses = {EnumDefinitions.Course.START,EnumDefinitions.Course.MAIN_FIRST,EnumDefinitions.Course.MAIN_SECOND};
+    
     void Start() {
         ShowPanel(0);
         courseSelectPanel.SetActive(false);
@@ -44,11 +45,12 @@ public class CourseSelect : MonoBehaviour
             yield return null;
         }
         rouletteController.isRouletteStopped = false;
-        OnRouletteFinallyStopped(rouletteController.GetResult());
-        Debug.Log(rouletteController.GetResult().ToString());
+        decideRoulette.transform.parent.parent.gameObject.SetActive(false);
+        CourseSetByRouletteResult(RouletteController.GetResult());
+        Debug.Log(RouletteController.GetResult().ToString());
     }
 
-    void OnRouletteFinallyStopped(int result){
+    public void CourseSetByRouletteResult(int result){
         if((result % 2) == 0){
             OnClickRightCourseButton(1);
         }else{
@@ -65,7 +67,7 @@ public class CourseSelect : MonoBehaviour
             }
         }
         courseSelectPanel.SetActive(false);
-        decideRoulette.transform.parent.parent.gameObject.SetActive(false);
+        // decideRoulette.transform.parent.parent.gameObject.SetActive(false);
     }
     void OnClickLeftCourseButton(int index){
         ConstData.CourseLink[(int)courseLinkOriginCourses[index]] = (int)leftButtonCourses[index];
@@ -75,6 +77,6 @@ public class CourseSelect : MonoBehaviour
             }
         }
         courseSelectPanel.SetActive(false);
-        decideRoulette.transform.parent.parent.gameObject.SetActive(false);
+        // decideRoulette.transform.parent.parent.gameObject.SetActive(false);
     }
 }

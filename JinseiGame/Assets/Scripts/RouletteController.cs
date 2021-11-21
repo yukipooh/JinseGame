@@ -102,7 +102,7 @@ public class RouletteController : MonoBehaviourPunCallbacks {
         }
     }
 
-    public int GetResult(){
+    public static int GetResult(){
         return int.Parse(result);
     }
 
@@ -129,4 +129,6 @@ public class RouletteController : MonoBehaviourPunCallbacks {
             }
         }
     }
+
+    
 }
