@@ -12,13 +12,16 @@ public class Tile : MonoBehaviourPunCallbacks
     CourseSelect courseSelect;
     RouletteController rouletteController;
     [SerializeField] GameObject buyHousePanel;
+    [SerializeField] GameObject resultPanel;    //ゴール後のリザルト画面
     [SerializeField] Text descriptionText;
     [SerializeField] GameObject moneyShowerPrefab;
     CarMovement stoppingCarMovement;
+    bool isAllGoaled = false;
     
     void Start() {
         courseSelect = GameObject.Find("CourseSelect").GetComponent<CourseSelect>();
         rouletteController = GameObject.Find("Canvas").transform.GetChild(1).GetChild(0).GetChild(2).GetComponent<RouletteController>();
+    
     }
     
     public void Stopped(ref PlayerData playerData){
@@ -103,6 +106,8 @@ public class Tile : MonoBehaviourPunCallbacks
                 break;
             case EnumDefinitions.TileType.GOAL:
                 playerData.isGoaled = true;
+                StartCoroutine(nameof(CheckIsAllGoaledAndShowResult));
+                
                 break;
             case EnumDefinitions.TileType.BRANCH:
                 if(gameObject.name == "0031_branch"){
@@ -163,6 +168,29 @@ public class Tile : MonoBehaviourPunCallbacks
         carMovement.StartCoroutine(carMovement.Dice(false,transform.parent.childCount - transform.GetSiblingIndex()));
     }
 
+    /// <summary>
+    /// プレイヤーがゴールした際に全員がゴールしたかどうかチェックしisAllGoaledを更新する
+    /// 全員ゴールしていたらリザルト表示
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator CheckIsAllGoaledAndShowResult(){
+        var goalHash = new ExitGames.Client.Photon.Hashtable();
+        goalHash["isGoaled"] = true;
+        PhotonNetwork.LocalPlayer.SetCustomProperties(goalHash);
+        yield return new WaitForSeconds(1); //カスタムプロパティが正常に登録されるのを待つ
+        isAllGoaled = true; //一旦trueにしておく
+        foreach(Player player in PhotonNetwork.PlayerList){
+            if((bool)player.CustomProperties["isGoaled"] == false){
+                isAllGoaled = false;    //一人でもゴールしていなかったらfalseに
+            }
+        }
+        //全員ゴールしていたら
+        if(isAllGoaled){
+            //result表示
+            photonView.RPC(nameof(ShowResult),RpcTarget.AllBuffered);
+        }
+    }
+
     //stringが参照型だから参照わたしみたいなのをコルーチンで表現できる
     IEnumerator DecideGamblerSalary(int baseSalary){
         rouletteController.transform.parent.parent.gameObject.SetActive(true);
@@ -196,4 +224,25 @@ public class Tile : MonoBehaviourPunCallbacks
 
         descriptionText.text += ("$" + salary.ToString() + "だ！");
     }
+
+    [PunRPC]
+    void ShowResult(){
+        
+        PlayerData playerData = null;
+        DateTime update = GameManager.updateTime;
+        MoneyRateFromUSDObject moneyObject = GameManager.moneyObject;
+        resultPanel.SetActive(true);
+        resultPanel.transform.GetChild(0).GetComponent<Text>().text = $"(最終情報取得 : {update.Year}年{update.Month}月{update.Day}日{update.Hour}時{update.Minute}分)";
+        resultPanel.transform.GetChild(1).GetComponent<Text>().text = $"$1 = ${moneyObject.JPY}円";
+        
+        foreach(CarMovement carMovement in GameManager.carMovements){
+            if(carMovement.photonView.IsMine){
+                playerData = carMovement.gameObject.GetComponent<PlayerData>();
+            }
+        }
+
+        resultPanel.transform.GetChild(2).GetComponent<Text>().text = $"あなたの所持金は${playerData.currentMoney}!\n円換算すると{(int)(playerData.currentMoney * moneyObject.JPY)}円です！！！";
+    }
+
+     
 }
