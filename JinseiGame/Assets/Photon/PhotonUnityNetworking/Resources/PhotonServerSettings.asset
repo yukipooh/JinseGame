@@ -46,6 +46,7 @@ MonoBehaviour:
   - RPC_ShowPin
   - RPC_TurnEnd
   - SyncCarColor
+  - ShowResult
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

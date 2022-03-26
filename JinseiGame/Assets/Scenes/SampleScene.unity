@@ -1541,6 +1541,7 @@ RectTransform:
   - {fileID: 1023287500}
   - {fileID: 1846106383}
   - {fileID: 2110443633}
+  - {fileID: 1690820787}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2033,6 +2034,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517707821}
+  m_CullTransparentMesh: 1
+--- !u!1 &518592671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 518592672}
+  - component: {fileID: 518592674}
+  - component: {fileID: 518592673}
+  m_Layer: 5
+  m_Name: RateText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &518592672
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518592671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1690820787}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0000076294, y: 141}
+  m_SizeDelta: {x: 300.8922, y: 62.3359}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &518592673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518592671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 341dcf9b833a5e94dbefa6ac1f566b3d, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "$1 = 113.1414\u5186"
+--- !u!222 &518592674
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518592671}
   m_CullTransparentMesh: 1
 --- !u!1 &551804547
 GameObject:
@@ -3892,6 +3972,49 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!1 &979614838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 979614840}
+  - component: {fileID: 979614839}
+  m_Layer: 0
+  m_Name: MoneyRateAPI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &979614839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979614838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a8107d704f59044878f2e95f95d49a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &979614840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979614838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 348.45966, y: 203.53568, z: -166.6861}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &995177847
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,6 +4169,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023287499}
+  m_CullTransparentMesh: 1
+--- !u!1 &1047954113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1047954114}
+  - component: {fileID: 1047954116}
+  - component: {fileID: 1047954115}
+  m_Layer: 5
+  m_Name: moneyText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1047954114
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047954113}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1690820787}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000015259, y: 2.5834}
+  m_SizeDelta: {x: 660.7091, y: 214.4973}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1047954115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047954113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 341dcf9b833a5e94dbefa6ac1f566b3d, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u3042\u306A\u305F\u306E\u6240\u6301\u91D1\u306F$1000000!\n\u5186\u63DB\u7B97\u3059\u308B\u3068125125125\u5186\u3067\u3059\uFF01\uFF01\uFF01"
+--- !u!222 &1047954116
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047954113}
   m_CullTransparentMesh: 1
 --- !u!1001 &1056776250
 PrefabInstance:
@@ -5907,6 +6109,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687090419}
   m_CullTransparentMesh: 1
+--- !u!1 &1690820786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1690820787}
+  - component: {fileID: 1690820789}
+  - component: {fileID: 1690820788}
+  m_Layer: 5
+  m_Name: ResultPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1690820787
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690820786}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1908078204}
+  - {fileID: 518592672}
+  - {fileID: 1047954114}
+  m_Father: {fileID: 408121722}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1690820788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690820786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1690820789
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690820786}
+  m_CullTransparentMesh: 1
 --- !u!4 &1709022929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7995511568018390243, guid: a7f7dd15d3b7f5749b8b5a6feeb238b1, type: 3}
@@ -6415,6 +6695,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890045796}
+  m_CullTransparentMesh: 1
+--- !u!1 &1908078203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908078204}
+  - component: {fileID: 1908078206}
+  - component: {fileID: 1908078205}
+  m_Layer: 5
+  m_Name: UpdateDateText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1908078204
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908078203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1690820787}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000010014, y: 189}
+  m_SizeDelta: {x: 728.7114, y: 55.5437}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1908078205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908078203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 341dcf9b833a5e94dbefa6ac1f566b3d, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "(\u6700\u7D42\u60C5\u5831\u53D6\u5F97 : 2021\u5E7411\u670821\u65E512:30)"
+--- !u!222 &1908078206
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908078203}
   m_CullTransparentMesh: 1
 --- !u!1001 &1908295857
 PrefabInstance:
@@ -7441,6 +7800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: e2ccc6eaded6f5042b4f6508591d1090, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &320940528873411755
@@ -7476,6 +7836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 06624ab08ed1ab140960be06afb7a2e0, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &328552042207758649
@@ -7525,6 +7886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 178a58a868ead894d9f874db88467536, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &350585490162298580
@@ -7560,6 +7922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 389f26d70bbcd8d4a9139c108b924917, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &390930059336259316
@@ -7631,6 +7994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 6e439306e8fbd174fb5114b1d21e4a6d, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &459377045575872227
@@ -7773,6 +8137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 39a4aa482a3a74e4e8c69a94588c4832, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &564273825116115616
@@ -7928,6 +8293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 5ab10f293c8d6fe4a819bd6b9eb70769, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &595005336499535735
@@ -8054,6 +8420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 8a15148d0211ada49b400fa87a33fd4c, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &664249161719856955
@@ -8309,6 +8676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 698caba9de013ad4aa31c24011027b97, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &769715899528779479
@@ -8527,6 +8895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 2cb36d042dcafed4c89e5d92f428ad8d, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &947632585995731591
@@ -8952,6 +9321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: b802a0a71e4db5a4192a45fffa155d62, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &1209798792284763081
@@ -9050,6 +9420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 5836a874dfae6e044a5eda28e04060e3, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &1237363044590522998
@@ -9265,6 +9636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 9b779df3f5f1b3348b4b87625de9a46b, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &1338027526181638190
@@ -9341,6 +9713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: e224c7db3aa391247ae46da96387e52f, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &1369444172815603891
@@ -9398,6 +9771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: b4d841cdbc8127943a3c5447ddd8db18, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &1471462681646260491
@@ -9668,6 +10042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: e08104d9e2890ae4e98a747dd25dd671, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &1594431330857887931
@@ -9731,6 +10106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: fde1fcaa1985e994bb90fed14a33bac7, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &1624904560559316065
@@ -9766,6 +10142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 8db1b5d86fa5e194092cc43cdbbe18e3, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &1652027662259170232
@@ -9989,6 +10366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 118192015f377754e9882833fbc0932e, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &1719605517396894930
@@ -10065,6 +10443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 726d9f2d8e23dd14f9508ac7bd9f1516, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &1734606302078898880
@@ -10157,6 +10536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 2f72ca0b81e391e4fbcaf9f2c271fb8c, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &1754295729979781554
@@ -10351,6 +10731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 045d06fc3094a5e4bb911d84558cc8e7, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &1866953668112944652
@@ -10386,6 +10767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: fad1e4e91d5478343852a45e539d67a8, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &1901001130848640250
@@ -10421,6 +10803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 9763ad0d026c4164fa1d63d6c0b26bc6, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &1930135198453546218
@@ -10456,6 +10839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 29d10fe3f9e210c46a6cf48265f25a96, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &1935961049459653715
@@ -10491,6 +10875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4eae4c621c389034db35222b508251e0, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &1962786112957116696
@@ -10654,6 +11039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 592ec28edad884f46bb952fcca50deb0, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &2067373267368719123
@@ -10697,6 +11083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 79a19e295b891b34f8feb0e5a26b0c8a, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &2095506838263796942
@@ -10822,6 +11209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: ff065795b4b257b43949515bdb3bf061, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &2198895337352550040
@@ -10954,6 +11342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4fbe1a47dd8d7844d991a5275fda71da, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &2295203295032131640
@@ -10989,6 +11378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 401ce8bcb7b12b4458839cce930618c6, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &2333326530898745963
@@ -11024,6 +11414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 21cb9170f76bc004e8686cc93e5e7962, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &2355798286379091361
@@ -11128,6 +11519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 2fe276a944a2ec54cad92be3e8c01c59, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &2441359665369266419
@@ -11177,6 +11569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: c76582f71f434c1489c7600b4bd5c8e3, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &2468646060056600535
@@ -11212,6 +11605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 46f0e64f89bd0224cb18a5bf454e65ca, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &2472672922859571362
@@ -11255,6 +11649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 45bbcaff55775b947a19c465aa2f479d, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &2474697306237891208
@@ -11520,6 +11915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 5f0be553977cce34abfb8025f60ad6ea, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &2656171121561656122
@@ -11563,6 +11959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4c81c58e845ed0045b28375d3d178eb0, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &2689969657474841457
@@ -11598,6 +11995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 735cfd8d69690bb4789dc232bdb40b32, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &2693579161969003048
@@ -11674,6 +12072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 932bd1a6184fb3f44b956421ad020879, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &2711728062537395851
@@ -11709,6 +12108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 6066bf2c244c5be4bbe7ea6147fc58e8, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &2733236938345434661
@@ -11920,6 +12320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: a69502d65f0604d4796050a1ef3bdf62, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &2877575836996575390
@@ -11955,6 +12356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 85ad72787ba339a49b903856c0d3d75d, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &2890236290136165278
@@ -12048,6 +12450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4d79de9d8262e084196a5c993c481c31, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &2976654094136452095
@@ -12083,6 +12486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 81bd5f53bfa96cb4880abd57f3a5ff28, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &3001305948041867123
@@ -12181,6 +12585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 36cc3caeefcd3384194f18f500b468f7, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &3086911249254679253
@@ -12216,6 +12621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 9e4196b8daa969b44b93cdd6daa721e8, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &3104381335914848455
@@ -12265,6 +12671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: cee728fa365962f40abb20833ee38f32, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &3110899629200270883
@@ -12473,6 +12880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: a64eea3ecfc6133468bf75c3726061f4, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &3178410362070283424
@@ -12508,6 +12916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 5e570661dca5ad54eaa96144edd63925, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &3184670250499171476
@@ -13077,6 +13486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 7984f03e425afee4ebc5c897f256e022, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &3562177419299373376
@@ -13279,6 +13689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: ef622742f74a2414d81cf69274c649e3, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &3681458075716289522
@@ -13377,6 +13788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 0adadff1d4e4d8844ab52269737a0329, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &3731388444473734267
@@ -13534,6 +13946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: a2d8a99e3a53b7742bc56c86a0141c1d, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &3839028118523106308
@@ -13569,6 +13982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 3bd000824edecf048831735504bce864, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &3849803007113510400
@@ -13618,6 +14032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 25f2b94dbb46dcc4c8b3d0fa4c1b5a42, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &3924822420628940168
@@ -13653,6 +14068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 94a83a04ded873e4597a1d8f45cf5434, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &3953029339463607351
@@ -13688,6 +14104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 5c9b839262defe54eb6f2ccedc9d2e22, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &3953157923782745301
@@ -13737,6 +14154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: f17326fcb7bd6fd4880181d6a38942fa, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &3978234175471764597
@@ -13862,6 +14280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4aef4f0cb8ab5ee429ff9b935a045b6c, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &4040624792607637930
@@ -13897,6 +14316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: a6522e5e9e840a1449a05c01fbd5bd67, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &4047349556097401222
@@ -13954,6 +14374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4bb3a4400da916643a5f34bdec572225, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &4135581255011147932
@@ -14039,6 +14460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4dce1cbf5180ba14e8c4b7f75e1efbf4, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &4235106918618238508
@@ -14074,6 +14496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 743fcdc87ba6caa4fbc3612fa867e5a1, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &4249069681261218411
@@ -14273,6 +14696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 6e14b4be7bfae2c4fa12a95064f8fb13, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &4399166482919744384
@@ -14308,6 +14732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 58cb0a68b59c6e84d917a057f4b529d4, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &4420200509715366776
@@ -14351,6 +14776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 91c88eb895b0ce741b37f4fe805c008c, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &4438945156758390479
@@ -14428,6 +14854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: ab5e3c9a51c941541a65c5f3f1902734, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &4483699807440135120
@@ -14442,6 +14869,7 @@ GameObject:
   - component: {fileID: 7968723356807243579}
   - component: {fileID: 7776246826069060905}
   - component: {fileID: 4483699807440135121}
+  - component: {fileID: 4483699807440135122}
   m_Layer: 0
   m_Name: 0147_goal
   m_TagString: Untagged
@@ -14463,8 +14891,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 3de87260b39ee15449affd7db9dcdca5, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
+--- !u!114 &4483699807440135122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483699807440135120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!23 &4527726954433455653
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14567,6 +15018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 0e2941ab651141f419d657bfdeb3e307, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &4581552401574876096
@@ -14602,6 +15054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 0e9e5990c77b45f4f9cfd3cd3e404faf, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &4603748104712941604
@@ -14651,6 +15104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 449280e35a7eadf4f9d98fafc3442b20, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &4635584669341949593
@@ -14735,6 +15189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 6a8de872ec094e147a10a3f449d7c838, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &4683455460254078383
@@ -14825,6 +15280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 89787ca9d8594b14883df93a3ac45bc8, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &4728639850120212517
@@ -14917,6 +15373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 3d7231ede2a7b674b93ee3172aa89a2b, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &4853481939576273125
@@ -14960,6 +15417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 29a91e0080ed1594b9f9c87a96990cf7, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &4863115181985597716
@@ -14995,6 +15453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 95bc57759570ee842b4981392940a722, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &4868643068314444509
@@ -15030,6 +15489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4376239323a0fe44fba9bdf6307f11e2, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &4873384352793191555
@@ -15081,6 +15541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: ea679306a082c61418d8a2d7be417fb0, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &4884081757961673967
@@ -15724,6 +16185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: e28b38741a269c84986b2484f837564a, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &5273598187873231910
@@ -15811,6 +16273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 390ff9ad5d9f7b0498c0949d584c5496, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &5374655888848108755
@@ -15986,6 +16449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 54de18377ae272347a53fbe5220b505f, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &5453772450880609695
@@ -16108,6 +16572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 9e03695ec39334249a53cf4f6908326f, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &5584436123056891492
@@ -16247,6 +16712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 99cbf40aee6ed9c4faf223cae993b51b, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &5648718787540407104
@@ -16323,6 +16789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 545d45df259e602499cb6c2c547db717, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &5669029934578400559
@@ -16374,6 +16841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 8324c4aea10a3b7408e27930c8426b3f, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &5686347990066396709
@@ -16450,6 +16918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 931be1d279bba7c449f1341b28a6e3cc, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &5742773562912950300
@@ -16499,6 +16968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 1dee14b8427cfb64a8e4c16693de69f6, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &5774730827926673460
@@ -16562,6 +17032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 3f9957d456e5ca14180d28377c8cb1c8, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &5842305459589266261
@@ -16597,6 +17068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 22fd8129d8e2b6047b6af80ebc842263, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &5847179861468349589
@@ -16756,6 +17228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 69dc3c91c55a1314e8ef41d3e6ea0168, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &5890413601730221258
@@ -17013,6 +17486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: cd5b2101a69f9ba45b34e9c983c79d5f, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &5978092032343786014
@@ -17089,6 +17563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: ca5eeedd2240f78469eeca1822b970be, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &6025420080098416519
@@ -17207,6 +17682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: bd97e438ff6a1504b8894c3ed13d3ced, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &6094026800036357357
@@ -17258,6 +17734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 3a987e43193cc9c4e9b61b3e26f42e39, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &6125889357987563177
@@ -17334,6 +17811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 17673c33ad292ec458239421252d7501, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &6148743411817594551
@@ -17369,6 +17847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 0de19831e5b76454da5a5a10357d6aa3, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &6155802293743651164
@@ -17412,6 +17891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 744826b88f2d334489d022c828970a45, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &6169889200390871866
@@ -17689,6 +18169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 601f2f356f1d6254d925ad5072ea4c3a, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &6406692173703736868
@@ -17815,6 +18296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: f187a4b93b5dd6b4892c860c971b2ff5, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &6468474768041739974
@@ -17890,8 +18372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc23a34c641cc8143af2a2891b0b6eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo: {fileID: 11400000, guid: 46d2bf5464f1f13439ac5d8cc9f083f4, type: 2}
+  tileInfo: {fileID: 11400000, guid: 1036c8e357ba08946863aeca6d064921, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &6564917126960776180
@@ -17927,6 +18410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 8df45fabe6b8c9c4ea428acac2115541, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &6574151751081192940
@@ -18011,6 +18495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: ed34427d283256a408c214fdd97e27d1, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &6588151590208927121
@@ -18046,6 +18531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 28fc5351bcbede0498d753f743a0442c, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &6610393375029310150
@@ -18172,6 +18658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: f36dde01fd525224a89469b9d36b5c27, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &6741318536811660972
@@ -18207,6 +18694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: bd0644bb53d4b9e4a86d0cbd429fe53e, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &6746643933070077678
@@ -18283,6 +18771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 9a5317bb7af45ed47855e464d3213d25, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &6756557682504069209
@@ -18531,6 +19020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: c5df1a66c30095144a4bcb1f3e771a3f, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &6804605676006519640
@@ -18645,6 +19135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: d5b8b21c667996647b3b81ed020da40e, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &6940664105579800241
@@ -18804,6 +19295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: d062245a6d6c2314f85dbc1dead9d69c, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &7057979377886198998
@@ -18847,6 +19339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 2de58cae3cfd28b4e98fe1f9f57ad4ff, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &7103476523111599535
@@ -19075,6 +19568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: f5d663f686c2c9649a0c637a99ee8dc2, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &7197666859543516922
@@ -19110,6 +19604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: a4ab52ce51c66e142b50c2af43f93562, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &7207756548798892869
@@ -19298,6 +19793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: d9ad26e183661bb4da3e852c074d2910, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &7324639820920742852
@@ -19359,6 +19855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: e9430d488fc715b478814bde4007071d, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &7368143099596241795
@@ -19547,6 +20044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: f8e8384856d8d2c4bbfb2e0c1abd5cb9, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &7489293309932853364
@@ -19668,6 +20166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4f5233928ce719341bd565bd8c7b3fe4, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &7547251692749539861
@@ -19703,6 +20202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 39ca8fc317b26d546b1166dea340bbc0, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &7565404384108450498
@@ -19897,6 +20397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 6bc0d7b8ef0601b4097234ef5cf2a1a7, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &7705843215056407637
@@ -19958,6 +20459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4200df2c9bfb17b4397814dbe603079b, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &7750919964721822642
@@ -20052,6 +20554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: bc1d84f1a6e33194da553d90e578544c, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &7758846321767256970
@@ -20172,6 +20675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 8422ed9061b62814aa3de51456aaaee8, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &7789499717771825307
@@ -20297,6 +20801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: e0dd62c835d814240a286168eb09382e, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &7816115940938313864
@@ -20340,6 +20845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 10d1caf31dc35164c87af377faf737fa, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &7834970408545972390
@@ -20375,6 +20881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 0c21a5c4fb5e8854b88c6036a36e8979, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &7839540465063335351
@@ -20418,6 +20925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: e8031de4882dec9428a9041b5759ceb2, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &7847336788893164051
@@ -20522,6 +21030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 45eb785123ed1cb45b119dc71a7d76e0, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &7893130368697617546
@@ -20557,6 +21066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 22a5bf913d0ffd64d928d36b55a28c84, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &7906157517042503705
@@ -20592,6 +21102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 3fa59c146a038a043951e7956c3c2c62, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &7906869636935904976
@@ -20676,6 +21187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 9b790db02c4b00443811c01b5b497bd6, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &7940939359463213345
@@ -20733,6 +21245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 7e410c0b6b5ff9d43ae78917fe568a95, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &7955874154292569540
@@ -20945,6 +21458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: e9cdb9ccfbd0eeb4ea0c7fd8ca25f645, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &8032321505659275366
@@ -20980,6 +21494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: da70e4cb52a757e448fc23d1f74a0585, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &8042919240197259768
@@ -21053,6 +21568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 46d2bf5464f1f13439ac5d8cc9f083f4, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &8139488995280166824
@@ -21102,6 +21618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 81f31f7b3a7d48c438f345ea1972a9e2, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &8150707529551630422
@@ -21194,6 +21711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: d0272c753baf0c54f9b96b0f7723166c, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &8209257966172064784
@@ -21243,6 +21761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 5aa495306d4e3ca41a7ac8f06e5275c6, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &8240832481914678281
@@ -21475,6 +21994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: dc13b2f55b1f90943a4f05f85efcd579, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &8382710656114063279
@@ -21510,6 +22030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 2c52036aee97e8d4599ff3c2c6390dcb, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!4 &8386260307731288434
@@ -21773,6 +22294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: ec65d05a45423e14db90524b3f5ea080, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &8630609374069414216
@@ -21849,6 +22371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 3b507ba1069bedb4082bcc376a952fcf, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &8692816958344614364
@@ -21900,6 +22423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 4c5677995c9d94e4189a8f9dab7ae836, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &8739890709295024341
@@ -21935,6 +22459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: b62b7b5a8f5b2aa4cb6a676a0927d050, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!1 &8745304822598922317
@@ -21970,6 +22495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 693c8236a53a7c24ca34e092358d3cf5, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &8745498868297883145
@@ -22331,6 +22857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 73f7990ca4460ea4a94f0281fc71ea1a, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!23 &8898304635429742574
@@ -22612,6 +23139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 0d6d8958d2d0ed549a755bc5eb5713ca, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}
 --- !u!33 &9081758870778770413
@@ -22797,5 +23325,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileInfo: {fileID: 11400000, guid: 7d648869021cced458beac7d364372da, type: 2}
   buyHousePanel: {fileID: 2110443632}
+  resultPanel: {fileID: 1690820786}
   descriptionText: {fileID: 857370008}
   moneyShowerPrefab: {fileID: 5446536871287883048, guid: 9a3ed86037fb64f469258ea9611dae34, type: 3}

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using System;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviourPunCallbacks
     public static List<CarMovement> carMovements = new List<CarMovement>();
     public static GameObject femalePin;
     public static GameObject childPin;
+    
+    public static MoneyRateFromUSDObject moneyObject;   //MoneyRate用のオブジェクト
+    public static DateTime updateTime;  //MoneyRate更新日時
     
     public List<Player> players;    //ターンに使う
 
@@ -40,6 +44,12 @@ public class GameManager : MonoBehaviourPunCallbacks
         this.Initialize();
         sampleScene.Initialize();
         turnManager.Initialize(players);
+
+        var goalHash = new ExitGames.Client.Photon.Hashtable();
+        goalHash["isGoaled"] = false;   //falseを0と表現する
+        PhotonNetwork.LocalPlayer.SetCustomProperties(goalHash);
+
+        // Debug.Log(PhotonNetwork.LocalPlayer.CustomProperties["tinko"]); 直後にCustomPropertiesを取得しようとしてもnullになる 少し時間をあける
     }
 
     void Initialize(){
