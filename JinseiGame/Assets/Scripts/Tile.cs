@@ -226,7 +226,7 @@ public class Tile : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void ShowResult(){
+    async void ShowResult(){
         
         PlayerData playerData = null;
         DateTime update = GameManager.updateTime;
@@ -242,7 +242,30 @@ public class Tile : MonoBehaviourPunCallbacks
         }
 
         resultPanel.transform.GetChild(2).GetComponent<Text>().text = $"あなたの所持金は${playerData.currentMoney}!\n円換算すると{(int)(playerData.currentMoney * moneyObject.JPY)}円です！！！";
-    }
 
-     
+        List<PlayerMoneyData> playerMoneyDatas = new List<PlayerMoneyData>(PhotonNetwork.PlayerList.Length);
+        foreach(Player player in PhotonNetwork.PlayerList){
+            PlayerMoneyData playerMoneyData = new PlayerMoneyData();
+            playerMoneyData.playerName = player.NickName;
+            playerMoneyData.playerMoney = (int)player.CustomProperties["currentMoney"];
+            playerMoneyDatas.Add(playerMoneyData);
+        }
+        playerMoneyDatas.Sort((a,b) => (b.playerMoney - a.playerMoney));    //降順でソート
+        GameObject placementPanel = resultPanel.transform.GetChild(3).gameObject;
+        for(int i = 0; i < PhotonNetwork.PlayerList.Length; i++){
+            placementPanel.transform.GetChild(i).GetComponent<Text>().text = $"{i + 1}位 : {playerMoneyDatas[i].playerName} {(int)playerMoneyDatas[i].playerMoney * moneyObject.JPY}円";
+            placementPanel.transform.GetChild(i).gameObject.SetActive(true);
+        }
+        // foreach(PlayerMoneyData item in playerMoneyDatas){
+        //     Debug.Log($"PlayerName : {item.playerName}, PlayerMoney : {item.playerMoney}");
+        // }
+    }
+}
+
+/// <summary>
+/// ゴール後の順位比較のためのデータ
+/// </summary>
+public class PlayerMoneyData{
+    public string playerName;  //プレイヤーの名前
+    public int playerMoney;    //プレイヤーの最終的な所持金
 }

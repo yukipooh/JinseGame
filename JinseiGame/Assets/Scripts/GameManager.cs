@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public static DateTime updateTime;  //MoneyRate更新日時
     
     public List<Player> players;    //ターンに使う
-
+    
     [SerializeField] WayMaterialChanger wayMaterialChanger;
     [SerializeField] RouletteMaker[] rouletteMakers;
     [SerializeField] ConstData constData;
