@@ -16,9 +16,18 @@ public class UIManager : MonoBehaviourPunCallbacks
     [SerializeField] GameObject rouletteForMove;
     [SerializeField] GameObject rouletteForDecision;
     [SerializeField] GameObject courseSelectPanel;
+    [SerializeField] GameObject treasurePanel;
 
     public void Initialize(){
 
+    }
+
+    public void ShowTreasurePanel(){
+        treasurePanel.SetActive(true);
+    }
+
+    public void DismissTreasurePanel(){
+        treasurePanel.SetActive(false);
     }
 
     public void DismissAllDefaultUI(bool name = false, bool money = false, bool description = false, bool roulette = false){
