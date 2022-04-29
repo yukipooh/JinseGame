@@ -16,9 +16,18 @@ public class UIManager : MonoBehaviourPunCallbacks
     [SerializeField] GameObject rouletteForMove;
     [SerializeField] GameObject rouletteForDecision;
     [SerializeField] GameObject courseSelectPanel;
+    [SerializeField] GameObject treasurePanel;
 
     public void Initialize(){
 
+    }
+
+    public void ShowTreasurePanel(){
+        treasurePanel.SetActive(true);
+    }
+
+    public void DismissTreasurePanel(){
+        treasurePanel.SetActive(false);
     }
 
     public void DismissAllDefaultUI(bool name = false, bool money = false, bool description = false, bool roulette = false){
@@ -51,13 +60,13 @@ public class UIManager : MonoBehaviourPunCallbacks
             switch(prop.Key){
                 case "currentMoney":
                     Debug.Log(prop.Value.ToString());
-                    currentMoneyText.text = "所持金：" + prop.Value.ToString() + "$";
+                    currentMoneyText.text = prop.Value.ToString() + "$";
                     break;
                 case "debt":
-                    debtText.text = "借金：" + prop.Value.ToString() + "$";
+                    debtText.text = prop.Value.ToString() + "$";
                     break;
                 case "job":
-                    jobText.text = "職業：" + prop.Value;
+                    jobText.text = prop.Value.ToString();
                     break;
                 case "familyNum":
 
