@@ -21,14 +21,14 @@ public class Tile : MonoBehaviourPunCallbacks
     void Start() {
         courseSelect = GameObject.Find("CourseSelect").GetComponent<CourseSelect>();
         rouletteController = GameObject.Find("Canvas").transform.GetChild(1).GetChild(0).GetChild(2).GetComponent<RouletteController>();
-    
+        
     }
     
     public void Stopped(ref PlayerData playerData){
         stoppingCarMovement = playerData.gameObject.GetComponent<CarMovement>();    //現在止まっているCarmovementを設定
         descriptionText.transform.parent.gameObject.SetActive(true);
         descriptionText.text = tileInfo.description;
-
+        
         switch(tileInfo.tileType){
             case EnumDefinitions.TileType.START:
                 
@@ -72,11 +72,15 @@ public class Tile : MonoBehaviourPunCallbacks
             case EnumDefinitions.TileType.MARRY:
                 if(playerData.familyNum == 1){
                     playerData.familyNum++; //配偶者を追加
+                    GameObject icon = GameObject.Find("PlayerIcon");
+                    icon.transform.GetChild(icon.transform.childCount - playerData.familyNum).gameObject.SetActive(true);   //iconに子供表示
                     stoppingCarMovement.ShowPin(true, false);
                 }
                 break;
             case EnumDefinitions.TileType.BIRTH:
                 playerData.familyNum++; //子供追加
+                GameObject playerIcon = GameObject.Find("PlayerIcon");
+                playerIcon.transform.GetChild(playerIcon.transform.childCount - playerData.familyNum).gameObject.SetActive(true);   //iconに子供表示
                 switch(playerData.familyNum){
                     case 3:
                         stoppingCarMovement.ShowPin(false, true, 0);
@@ -253,7 +257,7 @@ public class Tile : MonoBehaviourPunCallbacks
         playerMoneyDatas.Sort((a,b) => (b.playerMoney - a.playerMoney));    //降順でソート
         GameObject placementPanel = resultPanel.transform.GetChild(3).gameObject;
         for(int i = 0; i < PhotonNetwork.PlayerList.Length; i++){
-            placementPanel.transform.GetChild(i).GetComponent<Text>().text = $"{i + 1}位 : {playerMoneyDatas[i].playerName} {(int)playerMoneyDatas[i].playerMoney * moneyObject.JPY}円";
+            placementPanel.transform.GetChild(i).GetComponent<Text>().text = $"{i + 1}位 : {playerMoneyDatas[i].playerName} {(int)(playerMoneyDatas[i].playerMoney * moneyObject.JPY)}円";
             placementPanel.transform.GetChild(i).gameObject.SetActive(true);
         }
         // foreach(PlayerMoneyData item in playerMoneyDatas){

@@ -51,13 +51,13 @@ public class UIManager : MonoBehaviourPunCallbacks
             switch(prop.Key){
                 case "currentMoney":
                     Debug.Log(prop.Value.ToString());
-                    currentMoneyText.text = "所持金：" + prop.Value.ToString() + "$";
+                    currentMoneyText.text = prop.Value.ToString() + "$";
                     break;
                 case "debt":
-                    debtText.text = "借金：" + prop.Value.ToString() + "$";
+                    debtText.text = prop.Value.ToString() + "$";
                     break;
                 case "job":
-                    jobText.text = "職業：" + prop.Value;
+                    jobText.text = prop.Value.ToString();
                     break;
                 case "familyNum":
 
