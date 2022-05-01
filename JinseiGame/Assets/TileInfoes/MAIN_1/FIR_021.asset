@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FIR_021
   m_EditorClassIdentifier: 
   tileType: 1
-  description: "\u77E5\u4EBA\u306B\u7D39\u4ECB\u3057\u3066\u3082\u3089\u3063\u305F\u5973\u306E\u5B50\u3068\u826F\u3044\u96F0\u56F2\u6C17\uFF01\u30C7\u30FC\u30C8\u30675000$\u5931\u3046\u3002"
-  money_delta: -5000
+  description: "\u77E5\u4EBA\u306B\u7D39\u4ECB\u3057\u3066\u3082\u3089\u3063\u305F\u5973\u306E\u5B50\u3068\u826F\u3044\u96F0\u56F2\u6C17\uFF01\u30C7\u30FC\u30C8\u30672000$\u5931\u3046\u3002"
+  money_delta: -2000
   job: 0
   treasure: 0
   insurance: 0

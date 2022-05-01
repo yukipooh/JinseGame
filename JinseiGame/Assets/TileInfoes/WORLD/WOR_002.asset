@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: WOR_002
   m_EditorClassIdentifier: 
   tileType: 6
-  description: 
+  description: "\u30DC\u30C4\u30EF\u30CA\u306E\u9053\u7AEF\u306B\u843D\u3061\u3066\u3044\u305F\u306E\u306F\u30C0\u30A4\u30E4\u30E2\u30F3\u30C9\u3060\u3063\u305F\uFF01\n\u304A\u5B9D:\u30C0\u30A4\u30E4\u30E2\u30F3\u30C9
+    \u3092\u624B\u306B\u5165\u308C\u305F\uFF01"
   money_delta: 0
   job: 0
-  treasure: 0
+  treasure: 3
   insurance: 0
   isRed: 0
   isMustStop: 0

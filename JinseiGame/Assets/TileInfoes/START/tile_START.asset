@@ -18,3 +18,7 @@ MonoBehaviour:
   job: 0
   treasure: 0
   insurance: 0
+  isRed: 0
+  isMustStop: 0
+  isSalaryTile: 0
+  isMoveToNextCourseTile: 0

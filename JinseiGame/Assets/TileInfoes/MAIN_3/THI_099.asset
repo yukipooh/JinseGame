@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134def2eba15ce2479e7e825efc273f5, type: 3}
   m_Name: THI_099
   m_EditorClassIdentifier: 
-  tileType: 0
+  tileType: 1
   description: "\u7D66\u6599\u65E5\uFF01\n\u4ECA\u56DE\u306E\u7D66\u6599\u306F"
   money_delta: 0
   job: 0
