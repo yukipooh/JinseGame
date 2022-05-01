@@ -111,6 +111,21 @@ public class Tile : MonoBehaviourPunCallbacks
                 playerData.insurances.Add(tileInfo.insurance);  //保険追加
                 break;
             case EnumDefinitions.TileType.SETTLE:
+                int totalDebt = (int)(playerData.debt * 1.25f);
+                if(playerData.currentMoney - totalDebt >= 0){
+                    //借金を返せるなら
+                    playerData.currentMoney -= totalDebt;
+                    playerData.debt = 0;
+                    descriptionText.text = $"ここは決算マス。あなたのこれまでの借金を清算するマスです。あなたは{playerData.debt}の借金をしていたため、支払額は1.25倍の${(int)(playerData.debt * 1.25f)}となります。返済ありがとうございました。";
+                }else{
+                    //借金返せなかったら5秒間のクリック数×$500労働
+                    playerData.debt -= playerData.currentMoney;
+                    playerData.currentMoney = 0;
+                    var hashtable_settle = new ExitGames.Client.Photon.Hashtable();   
+                    hashtable_settle["isCanPayDebt"] = false;
+                    PhotonNetwork.LocalPlayer.SetCustomProperties(hashtable_settle);
+                    GameObject.Find("UIManager").GetComponent<UIManager>().ShowSettlePanel();
+                }
                 break;
             case EnumDefinitions.TileType.GOAL:
                 playerData.isGoaled = true;

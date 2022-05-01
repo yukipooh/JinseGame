@@ -63,11 +63,16 @@ public class TurnManager : MonoBehaviourPunCallbacks
         //自分のターンだったら
         if(PhotonNetwork.LocalPlayer == _playerTurnOrder[currentTurnIndex]){
             Debug.Log("ゴール済みのためターンエンド");
-        
-            uIManager.ShowAllDefaultUI();
-            if(isFirstTurn){
-                uIManager.ShowCourseSelectPanel();
-                isFirstTurn = false;
+            if((PhotonNetwork.LocalPlayer.CustomProperties["isCanPayDebt"] != null) && ((bool)PhotonNetwork.LocalPlayer.CustomProperties["isCanPayDebt"] == false)){
+                //借金が返せずに疎開されている状況だったら
+                uIManager.DismissAllDefaultUI(true,true,true,false);
+                uIManager.ShowSettlePanel();
+            }else{
+                uIManager.ShowAllDefaultUI();
+                if(isFirstTurn){
+                    uIManager.ShowCourseSelectPanel();
+                    isFirstTurn = false;
+                }
             }
         }else{
             uIManager.DismissAllDefaultUI(true,true,true,false);
