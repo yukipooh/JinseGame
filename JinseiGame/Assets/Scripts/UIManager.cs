@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviourPunCallbacks
     [SerializeField] GameObject courseSelectPanel;
     [SerializeField] GameObject treasurePanel;
     [SerializeField] GameObject closeButton;    //TreasurePanelの閉じるボタン
+    [SerializeField] GameObject settlePanel;
 
     public void Initialize(){
 
@@ -31,6 +32,15 @@ public class UIManager : MonoBehaviourPunCallbacks
     public void DismissTreasurePanel(){
         treasurePanel.SetActive(false);
         closeButton.SetActive(false);
+    }
+
+    public void ShowSettlePanel(){
+        settlePanel.SetActive(true);
+        settlePanel.transform.parent.GetComponent<SettlePanel>().InitializePanel();
+    }
+
+    public void DismissSettlePanel(){
+        settlePanel.SetActive(false);
     }
 
     public void DismissAllDefaultUI(bool name = false, bool money = false, bool description = false, bool roulette = false){
