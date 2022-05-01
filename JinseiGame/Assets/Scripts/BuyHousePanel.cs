@@ -29,12 +29,11 @@ public class BuyHousePanel : MonoBehaviourPunCallbacks
     [SerializeField] Sprite[] houseSprites;
     string[] houseStructureStrings = {"鉄筋コンクリート","鉄骨","木造"};
     
-    
 
     void Start() {
         houseDatas.Add(new HouseData(
             "人生マンション",    //名前
-            250000, //価格
+            58000, //価格
             "住所", //住所
             15, //築年数
             EnumDefinitions.HouseStructure.TEKKOTU,  //構造
@@ -45,7 +44,7 @@ public class BuyHousePanel : MonoBehaviourPunCallbacks
         ));
         houseDatas.Add(new HouseData(
             "人生アパートよこい",    //名前
-            150000, //価格
+            25000, //価格
             "住所", //住所
             25, //築年数
             EnumDefinitions.HouseStructure.MOKUZO,  //構造
@@ -56,7 +55,7 @@ public class BuyHousePanel : MonoBehaviourPunCallbacks
         ));
         houseDatas.Add(new HouseData(
             "マイホーム",    //名前
-            400000, //価格
+            80000, //価格
             "住所", //住所
             6, //築年数
             EnumDefinitions.HouseStructure.TEKKOTU,  //構造
@@ -67,7 +66,7 @@ public class BuyHousePanel : MonoBehaviourPunCallbacks
         ));
         houseDatas.Add(new HouseData(
             "海の見える豪邸",    //名前
-            600000, //価格
+            120000, //価格
             "住所", //住所
             5, //築年数
             EnumDefinitions.HouseStructure.TEKKIN,  //構造
@@ -78,7 +77,7 @@ public class BuyHousePanel : MonoBehaviourPunCallbacks
         ));
         houseDatas.Add(new HouseData(
             "人生城",    //名前
-            1000000, //価格
+            200000, //価格
             "住所", //住所
             150, //築年数
             EnumDefinitions.HouseStructure.TEKKIN,  //構造
@@ -93,6 +92,18 @@ public class BuyHousePanel : MonoBehaviourPunCallbacks
         buyButton.onClick.AddListener(() => OnClickBuyButton());
         yesButton.onClick.AddListener(() => OnClickYesButton());
         noButton.onClick.AddListener(() => OnClickNoButton());
+    }
+
+    void InitializeHousePanel(){
+        houseImage.sprite = houseDatas[(int)currentPage - 1].sprite;
+        houseName.text = houseDatas[(int)currentPage - 1].name;
+        housePrice.text = "価格： $" + houseDatas[(int)currentPage - 1].price;
+        houseArea.text = "間取り専有面積： " + houseDatas[(int)currentPage - 1].area + "㎡";
+        houseAddress.text = "住所： " + houseDatas[(int)currentPage - 1].address;
+        houseAge.text = "築年数： " + houseDatas[(int)currentPage - 1].age + "年";
+        houseStructure.text = "構造： " + houseStructureStrings[(int)houseDatas[(int)currentPage - 1].structure];
+        houseCapacity.text = "総戸数： " + houseDatas[(int)currentPage - 1].capacity + "人入居可能";
+        houseStory.text = "階建： " + houseDatas[(int)currentPage - 1].story + "階建";
     }
 
     void OnClickLeftButton(){
