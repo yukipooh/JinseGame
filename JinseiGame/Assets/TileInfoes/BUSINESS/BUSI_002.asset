@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 1
   description: "\u793E\u4F1A\u4EBA\u3068\u3057\u3066\u306E\u30DE\u30CA\u30FC\u3092\u8EAB\u306B\u3064\u3051\u308B\u305F\u3081\u30DE\u30CA\u30FC\u8B1B\u5EA7\u3092\u53D7\u3051\u308B\u30022000$\u5931\u3046\u3002"
-  money_delta: -2000
+  money_delta: -1000
   job: 0
   treasure: 0
   insurance: 0
   isRed: 0
   isMustStop: 0
   isSalaryTile: 0
+  isMoveToNextCourseTile: 0

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: THI_132
   m_EditorClassIdentifier: 
   tileType: 1
-  description: "11000$\u5931\u3046\u3002"
+  description: "\u9AD8\u7D1A\u30D5\u30EC\u30F3\u30C1\u3067\u30C7\u30A3\u30CA\u30FC!
+    11000$\u5931\u3046\u3002"
   money_delta: -11000
   job: 0
   treasure: 0

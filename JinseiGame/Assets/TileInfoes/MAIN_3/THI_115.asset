@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 5
   description: "\u5B50\u4F9B\u304C\u751F\u307E\u308C\u305F\uFF01\u7537\u306E\u5B50\u3060\uFF01\n"
-  money_delta: -2000
+  money_delta: 0
   job: 0
   treasure: 0
   insurance: 0

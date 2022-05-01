@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: SPE_001
   m_EditorClassIdentifier: 
   tileType: 1
-  description: "\u8EE2\u3093\u3060\u3068\u304D\u306B\u8CA1\u5E03\u3092\u843D\u3068\u3057\u3066\u3057\u307E\u3063\u305F\uFF013000$\u5931\u3046\u3002"
-  money_delta: -3000
+  description: "\u8EE2\u3093\u3060\u3068\u304D\u306B\u8CA1\u5E03\u3092\u843D\u3068\u3057\u3066\u3057\u307E\u3063\u305F\uFF011000$\u5931\u3046\u3002"
+  money_delta: -1000
   job: 0
   treasure: 0
   insurance: 0
   isRed: 0
   isMustStop: 0
   isSalaryTile: 0
+  isMoveToNextCourseTile: 0

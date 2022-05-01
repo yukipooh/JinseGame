@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: WOR_008
   m_EditorClassIdentifier: 
   tileType: 6
-  description: 
+  description: "\u30A2\u30E9\u30D3\u30A2\u6D77\u306B\u6D6E\u304B\u3076\u4E0D\u601D\u8B70\u306A\u7269\u4F53\u3092\u767A\u898B\uFF01\n\u304A\u5B9D:\u9B54\u6CD5\u306E\u30E9\u30F3\u30D7
+    \u3092\u624B\u306B\u5165\u308C\u305F\u3002"
   money_delta: 0
   job: 0
   treasure: 0

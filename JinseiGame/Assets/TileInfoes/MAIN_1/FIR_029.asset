@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134def2eba15ce2479e7e825efc273f5, type: 3}
   m_Name: FIR_029
   m_EditorClassIdentifier: 
-  tileType: 1
-  description: "\u521D\u4EFB\u7D66\u3092\u4F7F\u3063\u30665000$\u3067\u6642\u8A08\u3092\u8CB7\u3063\u305F\uFF01\n\u304A\u5B9D:\u30ED\u30EB\u30C3\u30AF\u30B9\u306E\u6642\u8A08
+  tileType: 6
+  description: "\u9053\u7AEF\u3067\u53E4\u3044\u30B3\u30F3\u30D1\u30B9\u3092\u62FE\u3063\u305F\uFF01\n\u304A\u5B9D:\u30B3\u30F3\u30D1\u30B9
     \u3092\u624B\u306B\u5165\u308C\u305F"
-  money_delta: -5000
+  money_delta: 0
   job: 0
   treasure: 5
   insurance: 0

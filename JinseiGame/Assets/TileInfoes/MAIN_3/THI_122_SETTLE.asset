@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: THI_122_SETTLE
   m_EditorClassIdentifier: 
   tileType: 9
-  description: "\u6C7A\u7B97"
-  money_delta: 40000
+  description: "\u7D66\u6599\u65E5\uFF01\u4ECA\u65E5\u306F\u30DC\u30FC\u30CA\u30B9\u3082\u51FA\u305F\uFF01"
+  money_delta: 0
   job: 0
   treasure: 0
   insurance: 0
   isRed: 0
   isMustStop: 1
-  isSalaryTile: 0
+  isSalaryTile: 1
   isMoveToNextCourseTile: 0

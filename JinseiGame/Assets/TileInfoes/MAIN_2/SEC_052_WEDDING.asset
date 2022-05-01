@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SEC_052_WEDDING
   m_EditorClassIdentifier: 
   tileType: 4
-  description: "\u7D50\u5A5A\u3057\u307E\u3057\u305F\uFF01\n\u4ECA\u56DE\u306E\u7D66\u6599\u306F"
+  description: "\u7D50\u5A5A\u3057\u307E\u3057\u305F\uFF01\u30D1\u30FC\u30C8\u30CA\u30FC\u3092\u96A3\u306B\u4E57\u305B\u3066\u3042\u3052\u3088\u3046\uFF01\n\u4ECA\u56DE\u306E\u7D66\u6599\u306F"
   money_delta: 0
   job: 0
   treasure: 0

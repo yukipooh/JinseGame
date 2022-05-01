@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SEC_053
   m_EditorClassIdentifier: 
   tileType: 1
-  description: "Vtuber\u306B\u8D64\u30B9\u30D1\u6295\u3052\u308B\uFF014000$\u5931\u3046\u3002"
-  money_delta: -4000
+  description: "Vtuber\u306B\u8D64\u30B9\u30D1\u6295\u3052\u308B\uFF012000$\u5931\u3046\u3002"
+  money_delta: -2000
   job: 0
   treasure: 0
   insurance: 0

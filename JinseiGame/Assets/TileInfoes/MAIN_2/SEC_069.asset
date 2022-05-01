@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SEC_069
   m_EditorClassIdentifier: 
   tileType: 6
-  description: "\u672A\u77E5\u306E\u5408\u91D1\u3067\u3067\u304D\u305F\u30ED\u30DC\u30C3\u30C8\u3092\u767A\u898B\uFF01\n\u304A\u5B9D:\u30ED\u30DC\u30C3\u30C8\u3000\u3092\u624B\u306B\u5165\u308C\u305F\u3002"
-  money_delta: 9000
+  description: "\u5C31\u6D3B\u304C\u4E0A\u624B\u304F\u3044\u304B\u306A\u3044\uFF01\n\u304A\u5B9D:\u304A\u7948\u308A\u30E1\u30FC\u30EB\u3000\u3092\u624B\u306B\u5165\u308C\u305F\u3002"
+  money_delta: 0
   job: 0
-  treasure: 1
+  treasure: 13
   insurance: 0
   isRed: 0
   isMustStop: 0
