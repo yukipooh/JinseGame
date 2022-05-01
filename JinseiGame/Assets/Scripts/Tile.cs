@@ -97,8 +97,12 @@ public class Tile : MonoBehaviourPunCallbacks
                 }
                 break;
             case EnumDefinitions.TileType.TREASURE:
+                GameObject treasurePanelObject = GameObject.Find("TreasurePanel");
+                Debug.Log(treasurePanelObject);
+                TreasurePanel treasurePanel = treasurePanelObject.GetComponent<TreasurePanel>();
+                treasurePanel.AddTreasure(tileInfo.treasure, playerData.treasures.Count);
                 playerData.treasures.Add(tileInfo.treasure);
-                playerData.currentMoney -= tileInfo.money_delta;
+                playerData.currentMoney += tileInfo.money_delta;
                 break;
             case EnumDefinitions.TileType.HOUSING:
                 buyHousePanel.SetActive(true);

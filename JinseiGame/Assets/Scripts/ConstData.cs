@@ -90,17 +90,17 @@ public class ConstData : MonoBehaviour
 
         TreasureValues.Add(EnumDefinitions.Treasure.TELESCOPE,40000);
         TreasureValues.Add(EnumDefinitions.Treasure.ROBOT,48000);
-        TreasureValues.Add(EnumDefinitions.Treasure.FOSSIL,95000);
+        TreasureValues.Add(EnumDefinitions.Treasure.MAGIC_BOOTS,95000);
         TreasureValues.Add(EnumDefinitions.Treasure.DIAMOND,120000);
         TreasureValues.Add(EnumDefinitions.Treasure.FIGURE,60000);
-        TreasureValues.Add(EnumDefinitions.Treasure.WATCH,80000);
+        TreasureValues.Add(EnumDefinitions.Treasure.COMPUS,80000);
         TreasureValues.Add(EnumDefinitions.Treasure.PAINTING,85000);
-        TreasureValues.Add(EnumDefinitions.Treasure.RING,72000);
-        TreasureValues.Add(EnumDefinitions.Treasure.GAME_MACHINE,50000);
-        TreasureValues.Add(EnumDefinitions.Treasure.PIANO,90000);
-        TreasureValues.Add(EnumDefinitions.Treasure.TABLET,45000);
-        TreasureValues.Add(EnumDefinitions.Treasure.SMARTPHONE,64000);
-        TreasureValues.Add(EnumDefinitions.Treasure.PROJECTOR,50000);
+        TreasureValues.Add(EnumDefinitions.Treasure.KOHAKU,72000);
+        TreasureValues.Add(EnumDefinitions.Treasure.MAGIC_LAMP,50000);
+        TreasureValues.Add(EnumDefinitions.Treasure.KABUTO,90000);
+        TreasureValues.Add(EnumDefinitions.Treasure.EGG,45000);
+        TreasureValues.Add(EnumDefinitions.Treasure.ANCIENT_PAINTING,64000);
+        TreasureValues.Add(EnumDefinitions.Treasure.PIRATE_SWORD,50000);
         TreasureValues.Add(EnumDefinitions.Treasure.MAIL,10000);
     }
 }
