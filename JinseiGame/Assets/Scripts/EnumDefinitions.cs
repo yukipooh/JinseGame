@@ -44,19 +44,19 @@ public class EnumDefinitions
     }
 
     public enum Treasure{
-        TELESCOPE,
-        ROBOT,
-        FOSSIL,
-        DIAMOND,
-        FIGURE,
-        WATCH,
-        PAINTING,
-        RING,
-        GAME_MACHINE,
-        PIANO,
-        TABLET,
-        SMARTPHONE,
-        PROJECTOR,
+        TELESCOPE,  //望遠鏡
+        ROBOT,  //古代のロボット
+        MAGIC_BOOTS,    //魔法の靴
+        DIAMOND,    //ダイヤモンド
+        FIGURE, //古代の石像
+        COMPUS,  //コンパス
+        PAINTING,   //有名な絵画
+        KOHAKU,   //巨大な琥珀
+        MAGIC_LAMP, //魔法のランプ
+        KABUTO,  //古代の兜
+        EGG,    //恐竜の卵
+        ANCIENT_PAINTING, //古代の肖像画
+        PIRATE_SWORD,  //海賊の剣
         MAIL,   //お祈りメール
     }
 
