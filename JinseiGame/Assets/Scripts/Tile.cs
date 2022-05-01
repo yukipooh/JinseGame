@@ -185,9 +185,12 @@ public class Tile : MonoBehaviourPunCallbacks
 
     //このコルーチン　isRedのマスに適用するとDiceが重複してバグるから注意
     IEnumerator MoveToNextCourseTile(CarMovement carMovement){
+        PressEnterText pressEnterText = GameObject.Find("PressEnterAlert").GetComponent<PressEnterText>();
+        pressEnterText.StartCoroutine("AlertAnimation");
         while(!Input.GetKeyDown(KeyCode.Return)){
             yield return null;
         }
+        PressEnterText.isPressedEnter = true;
         carMovement.StartCoroutine(carMovement.Dice(false,transform.parent.childCount - transform.GetSiblingIndex()));
     }
 
@@ -246,6 +249,10 @@ public class Tile : MonoBehaviourPunCallbacks
         Destroy(moneyShower,4f);
 
         descriptionText.text += ("$" + salary.ToString() + "だ！");
+        if(CarMovement.isJustStopped){
+            stoppingCarMovement.TurnEnd();  //ターンエンド
+            CarMovement.isJustStopped = false;
+        }
     }
 
     [PunRPC]

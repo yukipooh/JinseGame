@@ -32,7 +32,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
 
     public bool isStopping = false;    //車が一時停止しているかどうかのフラグ
 
-    const float ROTATE_FORWARD_ADJUST_ANGLE = 90;
+    public static bool isJustStopped = false;   //赤マスにちょうど止まったかどうかのフラグ
 
     // public void Initialize(){
         
@@ -98,6 +98,7 @@ public class CarMovement : MonoBehaviourPunCallbacks
                     currentTile.Stopped(ref playerData);    //通り過ぎたマスの効果を発揮
                     // gameManager.SetCurrentMoneyText(playerData.currentMoney);
                 }else{
+                    isJustStopped = true;
                     break;  //これでちょうど止まった時にブランチ選択の部分でバグらないように
                 }
                 isStopping = true;  //ブランチを選ぶタイミングでfalseに変える
@@ -108,14 +109,20 @@ public class CarMovement : MonoBehaviourPunCallbacks
                 }else{
                     //まだ移動できるとき
                     if(i != dice - 1){
+                        PressEnterText pressEnterText = GameObject.Find("PressEnterAlert").GetComponent<PressEnterText>();
+                        pressEnterText.StartCoroutine("AlertAnimation");
                         while(!Input.GetKeyDown(KeyCode.Return)){
                             yield return null;
                         }
+                        PressEnterText.isPressedEnter = true;
                     }
                 }
             
             }
             if(currentTile.tileInfo.isMustStop){
+                if(currentTile.tileInfo.isSalaryTile && (playerData.job == EnumDefinitions.Job.GAMBLER || playerData.job == EnumDefinitions.Job.TOP_GAMBLER)){
+                    isJustStopped = true;
+                }
                 break;  //移動をやめる
             }
             resultText.text = (dice-i-1).ToString();
@@ -125,8 +132,9 @@ public class CarMovement : MonoBehaviourPunCallbacks
             //Enterで移動する場合はルーレットを表示しない
             roulette.SetActive(true);
             Tile currentTile = currentCourse.transform.GetChild(currentNum).GetComponent<Tile>();
-            if(currentTile.tileInfo.tileType != EnumDefinitions.TileType.HOUSING){
-                //HOUSINGマスじゃなかったらここでターンエンド
+            if((currentTile.tileInfo.tileType != EnumDefinitions.TileType.HOUSING) && ((currentTile.tileInfo.isSalaryTile == false) || (playerData.job != EnumDefinitions.Job.GAMBLER && playerData.job != EnumDefinitions.Job.TOP_GAMBLER))){
+                //HOUSINGマスじゃないかつ止まっているマスがサラリーますでない、またはサラリーマスでも職業がギャンブラー系統じゃなければここでターンエンド
+                Debug.Log("ここでターンエンド");
                 TurnEnd();
             }
         }
